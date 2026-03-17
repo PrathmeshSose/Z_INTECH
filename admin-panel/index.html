@@ -50,58 +50,141 @@
     </header>
 
     <main class="content">
+
+      <!-- ── Photographer Hero Banner ── -->
+      <div class="photo-banner">
+        <div class="banner-bg-icons">
+          <i class="fa-solid fa-camera      banner-ico" style="top:15%;left:5%;animation-delay:0s"></i>
+          <i class="fa-solid fa-camera-retro banner-ico" style="top:55%;left:12%;animation-delay:.6s"></i>
+          <i class="fa-solid fa-image        banner-ico" style="top:20%;left:30%;animation-delay:1.2s"></i>
+          <i class="fa-solid fa-film         banner-ico" style="top:60%;left:45%;animation-delay:.3s"></i>
+          <i class="fa-solid fa-camera       banner-ico" style="top:25%;left:65%;animation-delay:.9s"></i>
+          <i class="fa-solid fa-images       banner-ico" style="top:65%;left:78%;animation-delay:1.5s"></i>
+          <i class="fa-solid fa-camera-retro banner-ico" style="top:10%;left:88%;animation-delay:.4s"></i>
+        </div>
+        <div class="banner-content">
+          <div class="shutter-ring"><i class="fa-solid fa-camera"></i></div>
+          <div>
+            <h1 class="banner-title">Welcome back, Admin <span class="wave">👋</span></h1>
+            <p class="banner-sub">Capture every moment — manage your events &amp; photos below.</p>
+            <!-- live ticker -->
+            <div class="banner-ticker">
+              <span class="ticker-dot"></span>
+              <span class="ticker-text">Live: 3 active events &nbsp;·&nbsp; 12 uploads today &nbsp;·&nbsp; 48 downloads this hour</span>
+            </div>
+          </div>
+        </div>
+        <!-- scan line overlay -->
+        <div class="scan-line"></div>
+      </div>
+
       <div class="page-heading">
-        <div><h2>Dashboard</h2><p class="page-sub">Welcome back, Admin! Here's what's happening across all events.</p></div>
-        <a href="pages/events.html" class="btn btn-primary"><i class="fa-solid fa-plus"></i> New Event</a>
+        <div><h2>Dashboard</h2><p class="page-sub">Here's what's happening across all events.</p></div>
+        <a href="pages/events.html" class="btn btn-primary btn-glow"><i class="fa-solid fa-plus"></i> New Event</a>
       </div>
 
-      <!-- Stats -->
+      <!-- ── Stat Cards ── -->
       <div class="stats-row">
-        <div class="stat-card border-yellow">
-          <div class="stat-icon-wrap yellow"><i class="fa-solid fa-folder-open"></i></div>
-          <div><div class="stat-num">24</div><div class="stat-lbl">Total Events</div><div class="stat-trend green">↑ 4 this month</div></div>
-        </div>
-        <div class="stat-card border-purple">
-          <div class="stat-icon-wrap purple"><i class="fa-solid fa-images"></i></div>
-          <div><div class="stat-num">1,284</div><div class="stat-lbl">Total Photos</div><div class="stat-trend green">↑ 128 this week</div></div>
-        </div>
-        <div class="stat-card border-green">
-          <div class="stat-icon-wrap teal"><i class="fa-solid fa-download"></i></div>
-          <div><div class="stat-num">3,920</div><div class="stat-lbl">Total Downloads</div><div class="stat-trend green">↑ 340 this week</div></div>
-        </div>
-      </div>
 
-      <!-- Bottom -->
+        <div class="stat-card border-yellow">
+          <div class="stat-icon-wrap yellow tooltip-wrap">
+            <i class="fa-solid fa-folder-open"></i>
+            <span class="tooltip-box">Total events created</span>
+          </div>
+          <div>
+            <div class="stat-num">24</div>
+            <div class="stat-lbl">Total Events</div>
+            <div class="stat-trend green">↑ 4 this month</div>
+            <div class="stat-bar"><div class="stat-bar-fill yellow-fill" style="--w:60%"></div></div>
+          </div>
+        </div>
+
+        <div class="stat-card border-purple">
+          <div class="stat-icon-wrap purple tooltip-wrap">
+            <i class="fa-solid fa-images"></i>
+            <span class="tooltip-box">Photos across all events</span>
+          </div>
+          <div>
+            <div class="stat-num">1,284</div>
+            <div class="stat-lbl">Total Photos</div>
+            <div class="stat-trend green">↑ 128 this week</div>
+            <div class="stat-bar"><div class="stat-bar-fill purple-fill" style="--w:82%"></div></div>
+          </div>
+        </div>
+
+        <div class="stat-card border-green">
+          <div class="stat-icon-wrap teal tooltip-wrap">
+            <i class="fa-solid fa-download"></i>
+            <span class="tooltip-box">Total photo downloads</span>
+          </div>
+          <div>
+            <div class="stat-num">3,920</div>
+            <div class="stat-lbl">Total Downloads</div>
+            <div class="stat-trend green">↑ 340 this week</div>
+            <div class="stat-bar"><div class="stat-bar-fill teal-fill" style="--w:74%"></div></div>
+          </div>
+        </div>
+
+      </div><!-- /stats-row -->
+
+      <!-- ── Bottom ── -->
       <div class="dash-bottom">
+
         <div class="recent-events-card">
           <div class="card-header">
-            <span class="card-title">Recent Events</span>
-            <a href="pages/events.html" class="view-all">View All</a>
+            <span class="card-title"><i class="fa-solid fa-clock-rotate-left" style="color:var(--primary);margin-right:.4rem"></i>Recent Events</span>
+            <a href="pages/events.html" class="view-all">View All →</a>
           </div>
           <table class="data-table">
             <thead><tr><th>EVENT</th><th>CODE</th><th>DATE</th><th>STATUS</th></tr></thead>
             <tbody>
-              <tr><td class="event-name">Tech Conference 2024</td><td><span class="code-pill">TC2024</span></td><td>Dec 15, 2024</td><td><span class="status-badge active">Active</span></td></tr>
-              <tr><td class="event-name">Annual Gala Night</td><td><span class="code-pill">AGN24</span></td><td>Dec 10, 2024</td><td><span class="status-badge active">Active</span></td></tr>
-              <tr><td class="event-name">Sports Day 2024</td><td><span class="code-pill">SD2024</span></td><td>Nov 28, 2024</td><td><span class="status-badge pending">Pending</span></td></tr>
-              <tr><td class="event-name">Graduation Ceremony</td><td><span class="code-pill">GC2024</span></td><td>Nov 20, 2024</td><td><span class="status-badge closed">Closed</span></td></tr>
-              <tr><td class="event-name">Birthday Bash – Ali</td><td><span class="code-pill">BBA24</span></td><td>Nov 5, 2024</td><td><span class="status-badge closed">Closed</span></td></tr>
+              <tr class="tr-anim">
+                <td class="event-name">Tech Conference 2024</td>
+                <td><span class="code-pill">TC2024</span></td>
+                <td>Dec 15, 2024</td>
+                <td><span class="status-badge active">Active</span></td>
+              </tr>
+              <tr class="tr-anim">
+                <td class="event-name">Annual Gala Night</td>
+                <td><span class="code-pill">AGN24</span></td>
+                <td>Dec 10, 2024</td>
+                <td><span class="status-badge active">Active</span></td>
+              </tr>
+              <tr class="tr-anim">
+                <td class="event-name">Sports Day 2024</td>
+                <td><span class="code-pill">SD2024</span></td>
+                <td>Nov 28, 2024</td>
+                <td><span class="status-badge pending">Pending</span></td>
+              </tr>
+              <tr class="tr-anim">
+                <td class="event-name">Graduation Ceremony</td>
+                <td><span class="code-pill">GC2024</span></td>
+                <td>Nov 20, 2024</td>
+                <td><span class="status-badge closed">Closed</span></td>
+              </tr>
+              <tr class="tr-anim">
+                <td class="event-name">Birthday Bash – Ali</td>
+                <td><span class="code-pill">BBA24</span></td>
+                <td>Nov 5, 2024</td>
+                <td><span class="status-badge closed">Closed</span></td>
+              </tr>
             </tbody>
           </table>
         </div>
 
         <div class="activity-card">
-          <div class="card-header"><span class="card-title">Recent Activity</span></div>
+          <div class="card-header"><span class="card-title"><i class="fa-solid fa-bolt" style="color:#f59e0b;margin-right:.4rem"></i>Recent Activity</span></div>
           <ul class="activity-list">
-            <li><span class="dot blue"></span><div><p>New event <strong>Tech Conference 2024</strong> created</p><span class="time-ago">2 hours ago</span></div></li>
-            <li><span class="dot blue"></span><div><p>48 photos uploaded to <strong>Annual Gala Night</strong></p><span class="time-ago">5 hours ago</span></div></li>
-            <li><span class="dot blue"></span><div><p>120 downloads from <strong>Sports Day 2024</strong></p><span class="time-ago">Yesterday</span></div></li>
-            <li><span class="dot yellow"></span><div><p>Event <strong>GC2024</strong> marked as closed</p><span class="time-ago">2 days ago</span></div></li>
-            <li><span class="dot blue"></span><div><p>Profile settings updated by admin</p><span class="time-ago">3 days ago</span></div></li>
-            <li><span class="dot blue"></span><div><p>New event <strong>Birthday Bash – Ali</strong> created</p><span class="time-ago">4 days ago</span></div></li>
+            <li class="act-item"><span class="dot blue pulse-dot"></span><div><p>New event <strong>Tech Conference 2024</strong> created</p><span class="time-ago">2 hours ago</span></div></li>
+            <li class="act-item"><span class="dot blue pulse-dot"></span><div><p>48 photos uploaded to <strong>Annual Gala Night</strong></p><span class="time-ago">5 hours ago</span></div></li>
+            <li class="act-item"><span class="dot blue pulse-dot"></span><div><p>120 downloads from <strong>Sports Day 2024</strong></p><span class="time-ago">Yesterday</span></div></li>
+            <li class="act-item"><span class="dot yellow pulse-dot"></span><div><p>Event <strong>GC2024</strong> marked as closed</p><span class="time-ago">2 days ago</span></div></li>
+            <li class="act-item"><span class="dot blue pulse-dot"></span><div><p>Profile settings updated by admin</p><span class="time-ago">3 days ago</span></div></li>
+            <li class="act-item"><span class="dot blue pulse-dot"></span><div><p>New event <strong>Birthday Bash – Ali</strong> created</p><span class="time-ago">4 days ago</span></div></li>
           </ul>
         </div>
-      </div>
+
+      </div><!-- /dash-bottom -->
     </main>
   </div>
 </div>
