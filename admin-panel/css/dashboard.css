@@ -1,0 +1,53 @@
+/* dashboard.css */
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.25rem}
+
+.stat-card{
+  background:var(--card);border-radius:var(--radius);
+  padding:1.25rem;display:flex;align-items:center;gap:1rem;
+  box-shadow:var(--shadow);border-left:4px solid transparent;
+  transition:box-shadow var(--t),transform var(--t);
+}
+.stat-card:hover{box-shadow:0 4px 18px rgba(0,0,0,.1);transform:translateY(-2px)}
+.stat-card.border-yellow{border-left-color:#f59e0b}
+.stat-card.border-purple{border-left-color:#8b5cf6}
+.stat-card.border-green {border-left-color:#10b981}
+
+.stat-icon-wrap{
+  width:44px;height:44px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;flex-shrink:0;
+}
+.stat-icon-wrap.yellow{background:#fef3c7;color:#d97706}
+.stat-icon-wrap.purple{background:#ede9fe;color:#7c3aed}
+.stat-icon-wrap.teal  {background:#d1fae5;color:#059669}
+
+.stat-num{font-size:1.7rem;font-weight:700;line-height:1;color:var(--text)}
+.stat-lbl{font-size:.78rem;color:var(--muted);margin-top:.2rem}
+.stat-trend{font-size:.75rem;margin-top:.3rem}
+.stat-trend.green{color:#10b981}
+
+/* Bottom two-column */
+.dash-bottom{display:grid;grid-template-columns:1fr 280px;gap:1rem}
+
+.recent-events-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.activity-card     {background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+
+/* Activity feed */
+.activity-list{list-style:none;padding:.5rem 1.25rem 1rem}
+.activity-list li{
+  display:flex;align-items:flex-start;gap:.75rem;
+  padding:.65rem 0;border-bottom:1px solid var(--border);
+}
+.activity-list li:last-child{border-bottom:none}
+.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:.35rem}
+.dot.blue  {background:#3b82f6}
+.dot.yellow{background:#f59e0b}
+.activity-list p{font-size:.8rem;color:var(--text);line-height:1.4}
+.activity-list strong{font-weight:700}
+.time-ago{font-size:.72rem;color:var(--muted);margin-top:.15rem;display:block}
+
+@media(max-width:900px){
+  .dash-bottom{grid-template-columns:1fr}
+  .stats-row{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){.stats-row{grid-template-columns:1fr}}
