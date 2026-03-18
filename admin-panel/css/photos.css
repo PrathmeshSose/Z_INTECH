@@ -1,0 +1,27 @@
+/* photos.css */
+.photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:1rem}
+
+.photo-card{
+  background:var(--card);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow);
+  transition:transform var(--t),box-shadow var(--t);
+}
+.photo-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.12)}
+
+.photo-thumb{
+  height:150px;position:relative;
+  display:flex;align-items:center;justify-content:center;
+  font-size:2.2rem;color:rgba(255,255,255,.5);
+}
+.photo-overlay{
+  position:absolute;inset:0;background:rgba(0,0,0,.35);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity var(--t);
+}
+.photo-card:hover .photo-overlay{opacity:1}
+
+.photo-info{padding:.65rem .9rem;display:flex;flex-direction:column;gap:.15rem}
+.photo-info span:first-child{font-size:.83rem;font-weight:600;color:var(--text)}
+.photo-event{font-size:.72rem;color:var(--muted)}
+
+@media(max-width:480px){.photo-grid{grid-template-columns:1fr 1fr}}

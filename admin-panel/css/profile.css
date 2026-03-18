@@ -1,0 +1,30 @@
+/* profile.css */
+.profile-layout{display:flex;gap:1.25rem;align-items:flex-start}
+
+.profile-card{
+  background:var(--card);border-radius:var(--radius);
+  box-shadow:var(--shadow);overflow:hidden;width:260px;flex-shrink:0;
+}
+.profile-cover{height:80px;background:linear-gradient(135deg,var(--primary),#a78bfa)}
+.profile-body{padding:0 1.25rem 1.5rem;text-align:center}
+.profile-avatar-wrap{margin-top:-30px;margin-bottom:.75rem}
+.profile-avatar{
+  width:60px;height:60px;border-radius:50%;
+  background:var(--primary);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;margin:0 auto;border:3px solid #fff;
+}
+.profile-name{font-size:1rem;font-weight:700;margin-bottom:.2rem}
+.profile-role{font-size:.75rem;color:var(--primary);font-weight:600;margin-bottom:.4rem}
+.profile-email{font-size:.78rem;color:var(--muted);margin-bottom:1rem}
+.profile-email i{margin-right:.3rem}
+
+.profile-stats{display:flex;justify-content:space-around;padding:.75rem 0;border-top:1px solid var(--border)}
+.ps-item{display:flex;flex-direction:column;align-items:center}
+.ps-val{font-size:1rem;font-weight:700;color:var(--primary)}
+.ps-lbl{font-size:.68rem;color:var(--muted);margin-top:.1rem}
+
+@media(max-width:900px){
+  .profile-layout{flex-direction:column}
+  .profile-card{width:100%}
+}

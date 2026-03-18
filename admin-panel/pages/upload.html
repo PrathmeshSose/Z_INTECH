@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel – SnapEvent</title>
+  <link rel="stylesheet" href="../css/base.css"/>
+  <link rel="stylesheet" href="../css/upload.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+<input type="checkbox" id="mob-toggle" hidden/>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-icon"><i class="fa-solid fa-camera-retro"></i></div>
+      <div><div class="brand-name">SnapEvent</div><div class="brand-sub">Admin Panel</div></div>
+    </div>
+    <div class="nav-group-label">MAIN</div>
+    <nav class="sidebar-nav">
+      <a href="../index.html" class="nav-item"><span class="nav-icon dash-icon"><i class="fa-solid fa-gauge-high"></i></span>Dashboard</a>
+      <a href="events.html"  class="nav-item"><span class="nav-icon events-icon"><i class="fa-solid fa-folder"></i></span>Events</a>
+      <a href="photos.html"  class="nav-item"><span class="nav-icon photos-icon"><i class="fa-solid fa-images"></i></span>Photos</a>
+      <a href="upload.html"  class="nav-item active"><span class="nav-icon upload-icon"><i class="fa-solid fa-cloud-arrow-up"></i></span>Upload</a>
+    </nav>
+    <div class="nav-group-label">ACCOUNT</div>
+    <nav class="sidebar-nav">
+      <a href="profile.html"  class="nav-item"><span class="nav-icon profile-icon"><i class="fa-solid fa-user"></i></span>Profile</a>
+      <a href="settings.html" class="nav-item"><span class="nav-icon settings-icon"><i class="fa-solid fa-gear"></i></span>Settings</a>
+      <a href="#" class="nav-item"><span class="nav-icon logout-icon"><i class="fa-solid fa-right-from-bracket"></i></span>Logout</a>
+    </nav>
+    <div class="sidebar-user">
+      <div class="sidebar-avatar"><i class="fa-solid fa-user"></i></div>
+      <div><div class="sidebar-user-name">Admin User</div><div class="sidebar-user-email">admin@snapevent.com</div></div>
+    </div>
+  </aside>
+  <div class="main-wrapper">
+    <header class="header">
+      <label for="mob-toggle" class="mob-btn"><i class="fa-solid fa-bars"></i></label>
+      <div class="breadcrumb"><span class="bc-home">Home</span><span class="bc-sep">/</span><span class="bc-current">Upload</span></div>
+      <div class="header-right">
+        <div class="notif-wrap"><i class="fa-solid fa-bell"></i><span class="notif-badge">3</span></div>
+        <div class="header-icon"><i class="fa-solid fa-sliders"></i></div>
+        <div class="header-avatar"><i class="fa-solid fa-user"></i></div>
+      </div>
+    </header>
+    <main class="content">
+      <div class="page-heading">
+        <div><h2>Upload Photos</h2><p class="page-sub">Add new photos to an event.</p></div>
+      </div>
+      <div class="form-card">
+        <div class="upload-zone">
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+          <p>Drag &amp; drop files here or click to browse</p>
+          <input type="file" id="file-input" multiple accept="image/*"/>
+          <label for="file-input" class="btn btn-primary">Choose Files</label>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Photo Title</label>
+            <input type="text" placeholder="Enter photo title"/>
+          </div>
+          <div class="form-group">
+            <label>Event</label>
+            <select>
+              <option>Select an event</option>
+              <option>Tech Conference 2024</option>
+              <option>Annual Gala Night</option>
+              <option>Sports Day 2024</option>
+              <option>Graduation Ceremony</option>
+              <option>Birthday Bash – Ali</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea rows="4" placeholder="Enter description..."></textarea>
+        </div>
+        <button class="btn btn-primary btn-full"><i class="fa-solid fa-cloud-arrow-up"></i> Upload Photos</button>
+      </div>
+    </main>
+  </div>
+</div>
+</body>
+</html>

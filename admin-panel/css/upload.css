@@ -1,0 +1,10 @@
+/* upload.css */
+.upload-zone{
+  border:2px dashed var(--border);border-radius:var(--radius);
+  padding:2rem;text-align:center;margin-bottom:1.25rem;
+  transition:border-color var(--t),background var(--t);
+}
+.upload-zone:hover{border-color:var(--primary);background:#f8f7ff}
+.upload-zone i{font-size:2rem;color:var(--primary);display:block;margin-bottom:.6rem}
+.upload-zone p{color:var(--muted);font-size:.83rem;margin-bottom:.9rem}
+.upload-zone input[type="file"]{display:none}
