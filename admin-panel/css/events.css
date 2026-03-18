@@ -1,0 +1,16 @@
+/* events.css */
+.search-bar{
+  display:flex;align-items:center;gap:.6rem;
+  background:var(--card);border:1.5px solid var(--border);
+  border-radius:7px;padding:.45rem .85rem;
+  font-size:.83rem;color:var(--muted);
+  width:220px;
+}
+.search-bar input{
+  border:none;outline:none;background:transparent;
+  font-size:.83rem;color:var(--text);width:100%;
+}
+.search-bar i{color:var(--muted);font-size:.85rem}
+
+.top-bar{display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;flex-wrap:wrap}
+.top-bar h2{margin-bottom:0;flex:1}
