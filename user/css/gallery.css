@@ -1,0 +1,67 @@
+/* gallery.css */
+body { background: #f8f9fa; }
+
+footer { background: #212529; }
+footer a { color: #adb5bd; text-decoration: none; }
+footer a:hover { color: #fff; }
+
+.photo-card { overflow: hidden; border-radius: 1rem; cursor: pointer; }
+.photo-card img { height: 220px; object-fit: cover; transition: transform .3s; }
+.photo-card:hover img { transform: scale(1.05); }
+
+.photo-col { transition: opacity .3s, transform .3s; }
+.photo-col.hidden { opacity: 0; pointer-events: none; transform: scale(.95); }
+
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.92);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#lightbox.active { display: flex; }
+#lightbox img { max-width: 90vw; max-height: 80vh; border-radius: .75rem; object-fit: contain; transition: transform .3s; }
+
+#lightbox .lb-close {
+  position: absolute;
+  top: 1rem; right: 1.25rem;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  line-height: 1;
+}
+
+#lightbox .lb-prev,
+#lightbox .lb-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  background: rgba(255,255,255,.1);
+  border: none;
+  border-radius: 50%;
+  width: 48px; height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+}
+#lightbox .lb-prev:hover,
+#lightbox .lb-next:hover { background: rgba(255,255,255,.25); }
+#lightbox .lb-prev { left: 1rem; }
+#lightbox .lb-next { right: 1rem; }
+#lightbox .lb-counter { color: #adb5bd; font-size: .85rem; margin-top: .75rem; }
+
+/* Professional color overrides */
+.navbar.bg-primary { background-color: #0f3460 !important; }
+.btn-primary { background-color: #0f3460 !important; border-color: #0f3460 !important; }
+.btn-primary:hover { background-color: #16213e !important; border-color: #16213e !important; }
+.text-primary { color: #0f3460 !important; }
+.badge.bg-primary { background-color: #0f3460 !important; }
+.btn-outline-primary { color: #0f3460 !important; border-color: #0f3460 !important; }
+.btn-outline-primary:hover { background-color: #0f3460 !important; color: #fff !important; }
