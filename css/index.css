@@ -1,0 +1,42 @@
+/* index.css */
+body { background: #f8f9fa; }
+
+footer { background: #212529; }
+footer a { color: #adb5bd; text-decoration: none; }
+footer a:hover { color: #fff; }
+
+.navbar { transition: background .3s; }
+.navbar.scrolled { background: #0f3460 !important; box-shadow: 0 4px 20px rgba(0,0,0,.3) !important; }
+
+.hero {
+  min-height: 80vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  display: flex;
+  align-items: center;
+}
+
+.hero-icon { animation: float 3s ease-in-out infinite; }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+
+.feature-card { transition: transform .2s; }
+.feature-card:hover { transform: translateY(-4px); }
+
+.event-type-card { transition: transform .2s; cursor: default; }
+.event-type-card:hover { transform: translateY(-4px); }
+
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Professional color overrides */
+.bg-navy { background-color: #0f3460 !important; }
+.navbar.bg-primary { background-color: #0f3460 !important; }
+.btn-primary { background-color: #0f3460 !important; border-color: #0f3460 !important; }
+.btn-primary:hover { background-color: #16213e !important; border-color: #16213e !important; }
+.text-primary { color: #0f3460 !important; }
+.badge.bg-primary { background-color: #0f3460 !important; }
+.btn-outline-primary { color: #0f3460 !important; border-color: #0f3460 !important; }
+.btn-outline-primary:hover { background-color: #0f3460 !important; color: #fff !important; }
+section.bg-primary { background-color: #0f3460 !important; }
