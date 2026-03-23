@@ -1,4 +1,5 @@
 /* gallery.css */
+<<<<<<< HEAD
 body { background: #f8f9fa; }
 
 footer { background: #212529; }
@@ -53,10 +54,153 @@ footer a:hover { color: #fff; }
 }
 #lightbox .lb-prev:hover,
 #lightbox .lb-next:hover { background: rgba(255,255,255,.25); }
+=======
+body { background: #f4f6fb; }
+
+footer { background: #0a0e1a; }
+footer a { color: #adb5bd; text-decoration: none; }
+footer a:hover { color: #fff; }
+
+/* ── Size slider bar ─────────────────────────── */
+.size-slider-bar { user-select: none; }
+.size-slider-bar .form-range { accent-color: #e94560; }
+
+/* ── Photo grid ──────────────────────────────── */
+.photo-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(var(--cols, 4), 1fr);
+  align-items: start;
+}
+.photo-grid .photo-col {
+  transition: opacity .3s, transform .3s;
+}
+.photo-grid .photo-col.hidden { opacity: 0; pointer-events: none; transform: scale(.95); }
+
+/* ── Photo card ──────────────────────────────── */
+.photo-card {
+  overflow: hidden;
+  border-radius: .75rem;
+  cursor: pointer;
+  position: relative;
+  transition: transform .15s ease, box-shadow .15s ease;
+  will-change: transform;
+  background: #000;
+}
+.photo-card img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform .3s;
+}
+.photo-card:hover img { transform: scale(1.04); }
+
+/* tilt shine overlay */
+.photo-card .tilt-shine {
+  position: absolute; inset: 0;
+  border-radius: .75rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s;
+  z-index: 5;
+}
+.photo-card:hover .tilt-shine { opacity: 1; }
+
+/* hover action bar */
+.photo-card .card-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.7) 0%, transparent 100%);
+  padding: .5rem .6rem .4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0;
+  transition: opacity .2s;
+  z-index: 6;
+}
+.photo-card:hover .card-overlay { opacity: 1; }
+.card-overlay small { color: #fff; font-size: .72rem; }
+
+.photo-check {
+  position: absolute;
+  top: 7px; left: 7px;
+  z-index: 10;
+}
+.photo-check .form-check-input {
+  width: 1.2rem; height: 1.2rem;
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,.4);
+}
+.photo-card:has(.photo-checkbox:checked) { outline: 3px solid #e94560; }
+
+.btn-fav {
+  position: absolute;
+  top: 7px; right: 7px;
+  z-index: 10;
+  background: rgba(255,255,255,.85);
+  border: none;
+  border-radius: 50%;
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  color: #ccc;
+  transition: color .2s, transform .2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,.2);
+}
+.btn-fav:hover { transform: scale(1.15); }
+.btn-fav.active { color: #e94560; }
+
+/* ── Confetti ────────────────────────────────── */
+.confetti-piece {
+  position: fixed;
+  width: 8px; height: 8px;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 99999;
+  animation: confettiFall 1s ease-out forwards;
+}
+@keyframes confettiFall {
+  0%   { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; }
+  100% { transform: translateY(120px) rotate(720deg) scale(.3); opacity: 0; }
+}
+
+/* ── Skeleton loader ─────────────────────────── */
+.skeleton {
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: .5rem;
+}
+body.dark .skeleton { background: linear-gradient(90deg,#2a2a2a 25%,#333 50%,#2a2a2a 75%); background-size:200% 100%; }
+@keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+
+/* ── Lightbox ────────────────────────────────── */
+#lightbox {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.92);
+  z-index: 9999;
+  align-items: center; justify-content: center; flex-direction: column;
+}
+#lightbox.active { display: flex; }
+#lightbox img { max-width: 90vw; max-height: 80vh; border-radius: .75rem; object-fit: contain; }
+#lightbox .lb-close { position: absolute; top: 1rem; right: 1.25rem; font-size: 2rem; color: #fff; cursor: pointer; line-height: 1; }
+#lightbox .lb-prev, #lightbox .lb-next {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  color: #fff; cursor: pointer; background: rgba(255,255,255,.1);
+  border: none; border-radius: 50%; width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+  transition: background .2s;
+}
+#lightbox .lb-prev:hover, #lightbox .lb-next:hover { background: rgba(255,255,255,.25); }
+>>>>>>> b5b2bf2 (Updated user folder files)
 #lightbox .lb-prev { left: 1rem; }
 #lightbox .lb-next { right: 1rem; }
 #lightbox .lb-counter { color: #adb5bd; font-size: .85rem; margin-top: .75rem; }
 
+<<<<<<< HEAD
 /* Professional color overrides */
 .navbar.bg-primary { background-color: #0f3460 !important; }
 .btn-primary { background-color: #0f3460 !important; border-color: #0f3460 !important; }
@@ -65,3 +209,15 @@ footer a:hover { color: #fff; }
 .badge.bg-primary { background-color: #0f3460 !important; }
 .btn-outline-primary { color: #0f3460 !important; border-color: #0f3460 !important; }
 .btn-outline-primary:hover { background-color: #0f3460 !important; color: #fff !important; }
+=======
+
+
+/* ── Responsive ──────────────────────────────── */
+@media (max-width: 767.98px) {
+  .photo-grid { --cols: 3 !important; }
+}
+@media (max-width: 575.98px) {
+  .photo-grid { --cols: 2 !important; }
+  .size-slider-bar .form-range { max-width: 100% !important; }
+}
+>>>>>>> b5b2bf2 (Updated user folder files)

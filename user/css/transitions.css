@@ -1,0 +1,12 @@
+/* Page transition */
+body { animation: fadeIn .4s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+a[href]:not([href^='#']):not([href^='mailto']):not([href^='tel']):not([target]) {
+  transition: opacity .15s;
+}
+
+.page-leave {
+  animation: fadeOut .3s ease forwards;
+}
+@keyframes fadeOut { to { opacity: 0; transform: translateY(-10px); } }

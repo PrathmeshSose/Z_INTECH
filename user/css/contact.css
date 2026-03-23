@@ -1,7 +1,13 @@
 /* contact.css */
+<<<<<<< HEAD
 body { background: #f8f9fa; }
 
 footer { background: #212529; }
+=======
+body { background: #f4f6fb; }
+
+footer { background: #0a0e1a; }
+>>>>>>> b5b2bf2 (Updated user folder files)
 footer a { color: #adb5bd; text-decoration: none; }
 footer a:hover { color: #fff; }
 
@@ -10,6 +16,7 @@ footer a:hover { color: #fff; }
   padding: 80px 0 60px;
 }
 
+<<<<<<< HEAD
 .info-card { border-radius: 1rem; transition: transform .2s; }
 .info-card:hover { transform: translateY(-4px); }
 
@@ -19,3 +26,77 @@ footer a:hover { color: #fff; }
 .btn-primary:hover { background-color: #16213e !important; border-color: #16213e !important; }
 .text-primary { color: #0f3460 !important; }
 .info-card i.text-primary { color: #0f3460 !important; }
+=======
+.info-card { border-radius: 1rem; transition: transform .2s, box-shadow .2s; }
+.info-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(233,69,96,.15) !important; }
+.info-card i { color: #e94560 !important; }
+
+/* Floating label inputs */
+.float-group {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+.float-group input,
+.float-group textarea,
+.float-group select {
+  width: 100%;
+  padding: 1.25rem .9rem .5rem;
+  border: 2px solid #dee2e6;
+  border-radius: 10px;
+  font-size: .95rem;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  background: #fff;
+}
+.float-group label {
+  position: absolute;
+  top: 1rem; left: .95rem;
+  font-size: .9rem;
+  color: #6c757d;
+  pointer-events: none;
+  transition: top .18s, font-size .18s, color .18s;
+  background: transparent;
+}
+.float-group input:focus,
+.float-group textarea:focus,
+.float-group select:focus {
+  border-color: #e94560;
+  box-shadow: 0 0 0 3px rgba(233,69,96,.12);
+}
+.float-group input:focus ~ label,
+.float-group input:not(:placeholder-shown) ~ label,
+.float-group textarea:focus ~ label,
+.float-group textarea:not(:placeholder-shown) ~ label,
+.float-group select:focus ~ label,
+.float-group select.has-value ~ label {
+  top: .28rem;
+  font-size: .72rem;
+  color: #e94560;
+  font-weight: 600;
+}
+
+/* Paper plane burst */
+.plane-particle {
+  position: fixed;
+  font-size: 1.2rem;
+  pointer-events: none;
+  z-index: 99999;
+  animation: planeFly 1s ease-out forwards;
+}
+@keyframes planeFly {
+  0%   { transform: translate(0,0) rotate(0deg) scale(1); opacity: 1; }
+  100% { transform: translate(var(--tx), var(--ty)) rotate(var(--tr)) scale(0); opacity: 0; }
+}
+
+
+
+/* ── Responsive ──────────────────────────────── */
+@media (max-width: 575.98px) {
+  .page-hero { padding: 50px 0 40px; }
+  .page-hero h1 { font-size: 1.6rem; }
+  .card.border-0.shadow-sm.rounded-4 { padding: 1.5rem !important; }
+  .float-group input,
+  .float-group textarea,
+  .float-group select { font-size: .88rem; }
+}
+>>>>>>> b5b2bf2 (Updated user folder files)

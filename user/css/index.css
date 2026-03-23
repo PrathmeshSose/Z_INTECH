@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* index.css */
 body { background: #f8f9fa; }
 
@@ -40,3 +41,239 @@ footer a:hover { color: #fff; }
 .btn-outline-primary { color: #0f3460 !important; border-color: #0f3460 !important; }
 .btn-outline-primary:hover { background-color: #0f3460 !important; color: #fff !important; }
 section.bg-primary { background-color: #0f3460 !important; }
+=======
+/* ── Base ─────────────────────────────────────── */
+body { background: #f4f6fb; }
+
+/* ── Color overrides ─────────────────────────── */
+#mainNav.scrolled { background-color: #07203f !important; box-shadow: 0 4px 24px rgba(0,0,0,.35) !important; }
+
+.btn-accent {
+  background: linear-gradient(135deg, #e94560, #c0392b);
+  border: none; color: #fff;
+  transition: transform .2s, box-shadow .2s;
+}
+.btn-accent:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(233,69,96,.4); color: #fff; }
+
+/* ── Navbar brand logo ───────────────────────── */
+.brand-logo {
+  width: 34px; height: 34px; border-radius: 8px;
+  background: linear-gradient(135deg, #e94560, #c0392b);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+}
+
+/* ── Marquee trust bar ───────────────────────── */
+.marquee-bar {
+  background: #fff;
+  border-top: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+  padding: .75rem 0;
+  overflow: hidden;
+}
+.marquee-track {
+  display: flex;
+  gap: 2.5rem;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+.marquee-track span {
+  font-size: .82rem;
+  font-weight: 600;
+  color: #495057;
+  white-space: nowrap;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── Section labels & titles ─────────────────── */
+.section-label {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #e94560;
+  margin-bottom: .4rem;
+}
+.section-title {
+  font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+  font-weight: 800;
+  color: #0f3460;
+  margin-bottom: 0;
+}
+
+/* ── Feature cards ───────────────────────────── */
+.features-section { background: #f4f6fb; }
+
+.feature-card-new {
+  background: #fff;
+  border-radius: 18px;
+  padding: 2rem 1.75rem;
+  box-shadow: 0 2px 16px rgba(15,52,96,.07);
+  transition: transform .25s, box-shadow .25s;
+}
+.feature-card-new:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(15,52,96,.13); }
+
+.fc-icon {
+  width: 52px; height: 52px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; color: #fff;
+}
+.bg-blue   { background: linear-gradient(135deg,#0f3460,#1a6fc4); }
+.bg-purple { background: linear-gradient(135deg,#6f42c1,#a855f7); }
+.bg-green  { background: linear-gradient(135deg,#198754,#20c997); }
+.bg-orange { background: linear-gradient(135deg,#fd7e14,#ffc107); }
+.bg-pink   { background: linear-gradient(135deg,#e94560,#f06292); }
+.bg-teal   { background: linear-gradient(135deg,#0dcaf0,#0f3460); }
+
+/* ── How it works ────────────────────────────── */
+.how-section { background: #fff; }
+
+.step-card {
+  background: #f4f6fb;
+  border-radius: 18px;
+  padding: 2.5rem 1.5rem;
+  position: relative;
+  transition: transform .25s;
+}
+.step-card:hover { transform: translateY(-5px); }
+
+.step-num {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: rgba(15,52,96,.07);
+  line-height: 1;
+  position: absolute;
+  top: 1rem; right: 1.25rem;
+}
+.step-icon {
+  width: 60px; height: 60px; border-radius: 50%;
+  background: linear-gradient(135deg,#0f3460,#e94560);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; color: #fff;
+  margin: 0 auto;
+}
+
+/* ── Stats banner ────────────────────────────── */
+.stats-banner {
+  background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+  padding: 4rem 0;
+}
+.stats-banner h2 { font-size: 2.4rem; }
+
+/* ── Testimonials ────────────────────────────── */
+.testimonials-section { background: #f4f6fb; }
+
+.testi-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 1.75rem;
+  box-shadow: 0 2px 16px rgba(15,52,96,.07);
+  height: 100%;
+  transition: transform .25s;
+}
+.testi-card:hover { transform: translateY(-4px); }
+
+.stars { color: #ffc107; font-size: 1rem; letter-spacing: 2px; }
+
+.testi-avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: linear-gradient(135deg,#0f3460,#e94560);
+  color: #fff; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── CTA Banner ──────────────────────────────── */
+.cta-banner {
+  background: linear-gradient(135deg, #e94560 0%, #c0392b 100%);
+  padding: 5rem 1rem;
+}
+.cta-icon { animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.12); }
+}
+
+/* ── Antigravity Banner ─────────────────────── */
+.antigrav-banner {
+  position: relative;
+  height: 520px;
+  background: linear-gradient(160deg, #04080f 0%, #0a1628 50%, #0f3460 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: crosshair;
+}
+#antigravCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+}
+.antigrav-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  pointer-events: none;
+}
+.antigrav-content .btn { pointer-events: all; }
+.antigrav-label {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #e94560;
+  margin-bottom: .5rem;
+}
+.antigrav-title {
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: .75rem;
+  text-shadow: 0 0 40px rgba(233,69,96,.4);
+}
+.antigrav-title span {
+  background: linear-gradient(90deg, #e94560, #a855f7, #0dcaf0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.antigrav-sub {
+  font-size: .95rem;
+  opacity: .65;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 575.98px) {
+  .antigrav-banner { height: 400px; }
+  .antigrav-title  { font-size: 1.55rem; }
+  .antigrav-sub    { font-size: .82rem; }
+  .antigrav-content .btn { font-size: .85rem; padding: .5rem 1.5rem; }
+  .stats-banner h2 { font-size: 1.6rem; }
+  .stats-banner    { padding: 2.5rem 0; }
+  .cta-banner      { padding: 3rem 1rem; }
+  .cta-banner h2   { font-size: 1.4rem; }
+  .feature-card-new { padding: 1.5rem 1.25rem; }
+  .step-card       { padding: 2rem 1.25rem; }
+  .testi-card      { padding: 1.25rem; }
+  .section-title   { font-size: 1.35rem; }
+}
+@media (max-width: 767.98px) {
+  .marquee-track span { font-size: .75rem; }
+}
+
+/* ── Footer ──────────────────────────────────── */
+footer { background: #0a0e1a; }
+footer a { color: #adb5bd; text-decoration: none; }
+footer a:hover { color: #fff; }
+
+/* ── Scroll reveal ───────────────────────────── */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+>>>>>>> b5b2bf2 (Updated user folder files)

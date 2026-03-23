@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Event Gallery Privacy Policy — how we handle your data." />
+  <title>Privacy Policy – Event Gallery</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="css/darkmode.css" rel="stylesheet" />
+  <link href="css/transitions.css" rel="stylesheet" />
+  <style>
+    body { background: #f4f6fb; }
+    .page-hero { background: linear-gradient(135deg,#1a1a2e,#16213e,#0f3460); padding: 80px 0 60px; }
+    footer { background: #0a0e1a; }
+    footer a { color: #adb5bd; text-decoration: none; }
+    footer a:hover { color: #fff; }
+    .policy-section h5 { color: #0f3460; }
+    body.dark .policy-section h5 { color: #6ea8fe; }
+    @media (max-width:575.98px) { .page-hero { padding: 50px 0 40px; } }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+        <span class="brand-logo"><i class="bi bi-camera-fill"></i></span>
+        Event Gallery
+      </a>
+      <button class="navbar-toggler border-0" type="button" id="navToggler">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse" id="nav">
+        <div class="nav-drawer-close"><button onclick="closeNav()">&times;</button></div>
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="nav-overlay" id="navOverlay" onclick="closeNav()"></div>
+    </div>
+  </nav>
+
+  <section class="page-hero text-white text-center">
+    <div class="container">
+      <i class="bi bi-shield-lock-fill display-4 mb-3 d-block"></i>
+      <h1 class="fw-bold">Privacy Policy</h1>
+      <p class="lead text-white-50">Last updated: January 1, 2025</p>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 policy-section">
+
+          <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-4">
+            <h5 class="fw-bold mb-3"><i class="bi bi-info-circle me-2"></i>1. Information We Collect</h5>
+            <p class="text-muted small">We collect minimal information necessary to provide our service. This includes event codes entered by guests, and basic usage data such as page visits. We do not require account registration or collect personal details from guests.</p>
+          </div>
+
+          <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-4">
+            <h5 class="fw-bold mb-3"><i class="bi bi-images me-2"></i>2. Photos &amp; Content</h5>
+            <p class="text-muted small">Photos are uploaded by photographers and are accessible only to guests with the correct event code. We do not share, sell, or distribute event photos to third parties. Photos are stored securely and deleted after the event expiry period.</p>
+          </div>
+
+          <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-4">
+            <h5 class="fw-bold mb-3"><i class="bi bi-hdd me-2"></i>3. Local Storage</h5>
+            <p class="text-muted small">We use your browser's localStorage to remember your last accessed event code, dark mode preference, and favourited photos. This data stays on your device and is never transmitted to our servers.</p>
+          </div>
+
+          <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-4">
+            <h5 class="fw-bold mb-3"><i class="bi bi-share me-2"></i>4. Third-Party Services</h5>
+            <p class="text-muted small">We use Bootstrap and Bootstrap Icons via CDN (jsDelivr). When you use social share buttons (WhatsApp, Facebook), you are redirected to those platforms and their privacy policies apply.</p>
+          </div>
+
+          <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-4">
+            <h5 class="fw-bold mb-3"><i class="bi bi-clock-history me-2"></i>5. Data Retention</h5>
+            <p class="text-muted small">Event galleries are available for 90 days after the event by default. After expiry, all associated photos are permanently deleted. Photographers may request extended retention periods.</p>
+          </div>
+
+          <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-4">
+            <h5 class="fw-bold mb-3"><i class="bi bi-envelope me-2"></i>6. Contact Us</h5>
+            <p class="text-muted small">If you have any questions about this Privacy Policy, please contact us at <a href="mailto:hello@eventgallery.com">hello@eventgallery.com</a>.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-5 text-white">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h6 class="fw-bold mb-3"><i class="bi bi-camera-fill me-2"></i>Event Gallery</h6>
+          <p class="small text-secondary mb-0">A simple, private photo sharing platform for every kind of event.</p>
+        </div>
+        <div class="col-md-4">
+          <h6 class="fw-bold mb-3">Quick Links</h6>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-1"><a href="index.html">Home</a></li>
+            <li class="mb-1"><a href="pages/access.html">Access Event</a></li>
+            <li class="mb-1"><a href="pages/about.html">About</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h6 class="fw-bold mb-3">Legal</h6>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-1"><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-secondary mt-4" />
+      <p class="text-center text-secondary small mb-0">&copy; 2025 Event Gallery &mdash; All rights reserved</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <button id="darkToggle" onclick="toggleDark()" title="Toggle dark mode"><i class="bi bi-moon-fill"></i></button>
+  <script src="js/common.js"></script>
+</body>
+</html>

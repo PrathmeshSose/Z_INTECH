@@ -3,10 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< HEAD
+=======
+  <meta name="description" content="Event Gallery — private photo sharing for weddings, birthdays, corporate events and more. Access your event photos instantly." />
+>>>>>>> b5b2bf2 (Updated user folder files)
   <title>Event Gallery</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
   <link href="css/index.css" rel="stylesheet" />
+<<<<<<< HEAD
 </head>
 <body>
 
@@ -36,10 +41,83 @@
       <p class="lead mb-4">Weddings, birthdays, corporate events &amp; more — enter your event code to access your photos</p>
       <a href="pages/access.html" class="btn btn-light btn-lg rounded-pill px-5 shadow">
         <i class="bi bi-key-fill me-2"></i>Access Event
+=======
+  <link href="css/darkmode.css" rel="stylesheet" />
+  <link href="css/transitions.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark shadow-sm" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+        <span class="brand-logo"><i class="bi bi-camera-fill"></i></span>
+        Event Gallery
+      </a>
+      <button class="navbar-toggler border-0" type="button" id="navToggler">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse" id="nav">
+        <div class="nav-drawer-close"><button onclick="closeNav()">&times;</button></div>
+        <ul class="navbar-nav ms-auto gap-1 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-2">
+            <a href="pages/access.html" class="btn btn-accent btn-sm rounded-pill px-4">
+              <i class="bi bi-key-fill me-1"></i>Access Event
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-overlay" id="navOverlay" onclick="closeNav()"></div>
+    </div>
+  </nav>
+
+
+
+  <!-- ═══════════════════════════════════════════
+       MARQUEE TRUST BAR
+  ═══════════════════════════════════════════ -->
+  <div class="marquee-bar">
+    <div class="marquee-track">
+      <span><i class="bi bi-suit-heart-fill text-danger me-2"></i>Weddings</span>
+      <span><i class="bi bi-balloon-fill text-warning me-2"></i>Birthdays</span>
+      <span><i class="bi bi-briefcase-fill text-info me-2"></i>Corporate Events</span>
+      <span><i class="bi bi-mortarboard-fill text-success me-2"></i>Graduations</span>
+      <span><i class="bi bi-music-note-beamed me-2" style="color:#a855f7"></i>Concerts</span>
+      <span><i class="bi bi-camera2 text-warning me-2"></i>Photo Shoots</span>
+      <span><i class="bi bi-trophy-fill text-danger me-2"></i>Sports Events</span>
+      <span><i class="bi bi-people-fill text-info me-2"></i>Reunions</span>
+      <!-- duplicate for seamless loop -->
+      <span><i class="bi bi-suit-heart-fill text-danger me-2"></i>Weddings</span>
+      <span><i class="bi bi-balloon-fill text-warning me-2"></i>Birthdays</span>
+      <span><i class="bi bi-briefcase-fill text-info me-2"></i>Corporate Events</span>
+      <span><i class="bi bi-mortarboard-fill text-success me-2"></i>Graduations</span>
+      <span><i class="bi bi-music-note-beamed me-2" style="color:#a855f7"></i>Concerts</span>
+      <span><i class="bi bi-camera2 text-warning me-2"></i>Photo Shoots</span>
+      <span><i class="bi bi-trophy-fill text-danger me-2"></i>Sports Events</span>
+      <span><i class="bi bi-people-fill text-info me-2"></i>Reunions</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       ANTIGRAVITY BANNER
+  ═══════════════════════════════════════════ -->
+  <section class="antigrav-banner" id="antigravBanner">
+    <canvas id="antigravCanvas"></canvas>
+    <div class="antigrav-content">
+      <div class="antigrav-label">Zero Gravity Experience</div>
+      <h2 class="antigrav-title">Every Moment,<br><span>Weightlessly Preserved</span></h2>
+      <p class="antigrav-sub">Move your cursor — watch your memories float free</p>
+      <a href="pages/access.html" class="btn btn-accent btn-lg rounded-pill px-5 mt-2 magnet-btn2">
+        <i class="bi bi-key-fill me-2"></i>Access My Event
+>>>>>>> b5b2bf2 (Updated user folder files)
       </a>
     </div>
   </section>
 
+<<<<<<< HEAD
   <!-- Features -->
   <section class="py-5">
     <div class="container">
@@ -63,14 +141,107 @@
             <i class="bi bi-download text-primary display-5 mb-3"></i>
             <h5 class="fw-semibold">Easy Download</h5>
             <p class="text-muted small mb-0">Download any photo directly to your device.</p>
+=======
+  <!-- ═══════════════════════════════════════════
+       FEATURES
+  ═══════════════════════════════════════════ -->
+  <section class="py-5 features-section">
+    <div class="container">
+      <div class="section-label text-center reveal">Powerful Features</div>
+      <h2 class="section-title text-center reveal">Everything you need for event photos</h2>
+      <div class="row g-4 mt-2">
+        <div class="col-md-4 reveal">
+          <div class="feature-card-new h-100">
+            <div class="fc-icon bg-blue"><i class="bi bi-shield-lock-fill"></i></div>
+            <h5 class="fw-semibold mt-3">Private Access</h5>
+            <p class="text-muted small mb-0">Only guests with the event code can view photos. Your memories stay yours.</p>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="feature-card-new h-100">
+            <div class="fc-icon bg-purple"><i class="bi bi-grid-fill"></i></div>
+            <h5 class="fw-semibold mt-3">Beautiful Gallery</h5>
+            <p class="text-muted small mb-0">Browse all event photos in a clean, responsive masonry grid — desktop or mobile.</p>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="feature-card-new h-100">
+            <div class="fc-icon bg-green"><i class="bi bi-download"></i></div>
+            <h5 class="fw-semibold mt-3">Easy Download</h5>
+            <p class="text-muted small mb-0">Download any photo directly to your device in full resolution, instantly.</p>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="feature-card-new h-100">
+            <div class="fc-icon bg-orange"><i class="bi bi-share-fill"></i></div>
+            <h5 class="fw-semibold mt-3">Instant Sharing</h5>
+            <p class="text-muted small mb-0">Share your gallery link with guests in seconds — no app required.</p>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="feature-card-new h-100">
+            <div class="fc-icon bg-pink"><i class="bi bi-phone-fill"></i></div>
+            <h5 class="fw-semibold mt-3">Mobile Friendly</h5>
+            <p class="text-muted small mb-0">Fully responsive on every device — phones, tablets, and desktops.</p>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="feature-card-new h-100">
+            <div class="fc-icon bg-teal"><i class="bi bi-lightning-charge-fill"></i></div>
+            <h5 class="fw-semibold mt-3">Lightning Fast</h5>
+            <p class="text-muted small mb-0">Optimised delivery so your guests never wait for photos to load.</p>
+>>>>>>> b5b2bf2 (Updated user folder files)
           </div>
         </div>
       </div>
     </div>
   </section>
 
+<<<<<<< HEAD
   <!-- Stats -->
   <section class="py-5 bg-primary text-white text-center">
+=======
+  <!-- ═══════════════════════════════════════════
+       HOW IT WORKS
+  ═══════════════════════════════════════════ -->
+  <section class="py-5 how-section">
+    <div class="container">
+      <div class="section-label text-center reveal">Simple Process</div>
+      <h2 class="section-title text-center reveal">Get your photos in 3 easy steps</h2>
+      <div class="row g-4 mt-3 justify-content-center">
+        <div class="col-md-4 reveal">
+          <div class="step-card text-center">
+            <div class="step-num">01</div>
+            <div class="step-icon"><i class="bi bi-key-fill"></i></div>
+            <h5 class="fw-semibold mt-3">Enter Event Code</h5>
+            <p class="text-muted small mb-0">Your photographer or event organiser gives you a unique code.</p>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="step-card text-center">
+            <div class="step-num">02</div>
+            <div class="step-icon"><i class="bi bi-images"></i></div>
+            <h5 class="fw-semibold mt-3">Browse Your Gallery</h5>
+            <p class="text-muted small mb-0">Instantly see all photos from your event in a beautiful grid.</p>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="step-card text-center">
+            <div class="step-num">03</div>
+            <div class="step-icon"><i class="bi bi-cloud-arrow-down-fill"></i></div>
+            <h5 class="fw-semibold mt-3">Download &amp; Share</h5>
+            <p class="text-muted small mb-0">Save your favourites or share the gallery with friends and family.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       STATS BANNER
+  ═══════════════════════════════════════════ -->
+  <section class="stats-banner text-white text-center">
+>>>>>>> b5b2bf2 (Updated user folder files)
     <div class="container">
       <div class="row g-4 justify-content-center">
         <div class="col-6 col-md-3 reveal">
@@ -93,6 +264,7 @@
     </div>
   </section>
 
+<<<<<<< HEAD
   <!-- Event Types -->
   <section class="py-5 bg-white">
     <div class="container">
@@ -132,13 +304,71 @@
           <div class="card event-type-card border-0 shadow-sm rounded-4 p-3">
             <i class="bi bi-three-dots text-secondary fs-2 mb-2"></i>
             <small class="fw-semibold">& More</small>
+=======
+  <!-- ═══════════════════════════════════════════
+       TESTIMONIALS
+  ═══════════════════════════════════════════ -->
+  <section class="py-5 testimonials-section">
+    <div class="container">
+      <div class="section-label text-center reveal">Testimonials</div>
+      <h2 class="section-title text-center reveal">Loved by guests &amp; photographers</h2>
+      <div class="row g-4 mt-2">
+        <div class="col-md-4 reveal">
+          <div class="testi-card">
+            <div class="stars mb-2">★★★★★</div>
+            <p class="small mb-3">"We used Event Gallery for our wedding and every guest could access photos within minutes. Absolutely seamless!"</p>
+            <div class="d-flex align-items-center gap-2">
+              <div class="testi-avatar">S</div>
+              <div><strong class="small">Sarah M.</strong><br><span class="text-muted" style="font-size:.75rem">Bride, New York</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="testi-card">
+            <div class="stars mb-2">★★★★★</div>
+            <p class="small mb-3">"As a photographer, this platform saves me hours. I upload once and all clients get instant access. Love it."</p>
+            <div class="d-flex align-items-center gap-2">
+              <div class="testi-avatar">J</div>
+              <div><strong class="small">James K.</strong><br><span class="text-muted" style="font-size:.75rem">Photographer, London</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="testi-card">
+            <div class="stars mb-2">★★★★★</div>
+            <p class="small mb-3">"Our corporate event photos were shared with 300 employees in seconds. The private code feature is brilliant."</p>
+            <div class="d-flex align-items-center gap-2">
+              <div class="testi-avatar">A</div>
+              <div><strong class="small">Aisha R.</strong><br><span class="text-muted" style="font-size:.75rem">Event Manager, Dubai</span></div>
+            </div>
+>>>>>>> b5b2bf2 (Updated user folder files)
           </div>
         </div>
       </div>
     </div>
   </section>
 
+<<<<<<< HEAD
   <!-- Footer -->
+=======
+  <!-- ═══════════════════════════════════════════
+       CTA BANNER
+  ═══════════════════════════════════════════ -->
+  <section class="cta-banner text-white text-center reveal">
+    <div class="container">
+      <i class="bi bi-camera-fill display-4 mb-3 d-block cta-icon"></i>
+      <h2 class="fw-bold mb-2">Ready to access your event photos?</h2>
+      <p class="opacity-75 mb-4">Enter your event code and relive every moment instantly.</p>
+      <a href="pages/access.html" class="btn btn-light btn-lg rounded-pill px-5 shadow fw-semibold">
+        <i class="bi bi-key-fill me-2"></i>Access My Event
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+>>>>>>> b5b2bf2 (Updated user folder files)
   <footer class="py-5 text-white">
     <div class="container">
       <div class="row g-4">
@@ -155,7 +385,18 @@
             <li><a href="pages/contact.html">Contact</a></li>
           </ul>
         </div>
+<<<<<<< HEAD
         <div class="col-md-4">
+=======
+        <div class="col-md-2">
+          <h6 class="fw-bold mb-3">Legal</h6>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-1"><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+>>>>>>> b5b2bf2 (Updated user folder files)
           <h6 class="fw-bold mb-3">Contact</h6>
           <ul class="list-unstyled small text-secondary mb-0">
             <li class="mb-1"><i class="bi bi-envelope-fill me-2"></i>hello@eventgallery.com</li>
@@ -170,20 +411,67 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<<<<<<< HEAD
   <script>
     // Navbar shrink on scroll
     window.addEventListener('scroll', () => {
       document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+=======
+  <button id="darkToggle" onclick="toggleDark()" title="Toggle dark mode"><i class="bi bi-moon-fill"></i></button>
+
+  <script>
+    // Navbar drawer
+    function openNav() { document.getElementById('nav').classList.add('show'); document.getElementById('navOverlay').classList.add('show'); document.body.style.overflow='hidden'; }
+    function closeNav() { document.getElementById('nav').classList.remove('show'); document.getElementById('navOverlay').classList.remove('show'); document.body.style.overflow=''; }
+    document.getElementById('navToggler').addEventListener('click', openNav);
+
+    // Dark mode
+    function toggleDark() {
+      document.body.classList.toggle('dark');
+      const on = document.body.classList.contains('dark');
+      localStorage.setItem('dark', on);
+      document.getElementById('darkToggle').innerHTML = on ? '<i class="bi bi-sun-fill"></i>' : '<i class="bi bi-moon-fill"></i>';
+    }
+    if (localStorage.getItem('dark') === 'true') {
+      document.body.classList.add('dark');
+      document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('darkToggle').innerHTML = '<i class="bi bi-sun-fill"></i>';
+      });
+    }
+
+    // Page leave transition
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('mailto') || href.startsWith('tel') || a.target) return;
+        a.addEventListener('click', e => {
+          e.preventDefault();
+          document.body.classList.add('page-leave');
+          setTimeout(() => window.location = href, 280);
+        });
+      });
+    });
+
+    // Navbar shrink on scroll
+    window.addEventListener('scroll', () => {
+      document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 60);
+>>>>>>> b5b2bf2 (Updated user folder files)
     });
 
     // Scroll reveal
     const observer = new IntersectionObserver(entries => {
       entries.forEach((e, i) => {
+<<<<<<< HEAD
         if (e.isIntersecting) {
           setTimeout(() => e.target.classList.add('visible'), i * 120);
         }
       });
     }, { threshold: 0.15 });
+=======
+        if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 100);
+      });
+    }, { threshold: 0.12 });
+>>>>>>> b5b2bf2 (Updated user folder files)
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     // Animated counters
@@ -203,6 +491,169 @@
       });
     }, { threshold: 0.5 });
     document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+<<<<<<< HEAD
+=======
+
+    // ── ANTIGRAVITY BANNER ──────────────────────
+    (function() {
+      const canvas = document.getElementById('antigravCanvas');
+      const ctx    = canvas.getContext('2d');
+      const sec    = document.getElementById('antigravBanner');
+      let W, H, mouse = { x: -999, y: -999 };
+
+      // Object definitions
+      const ITEMS = [
+        { icon: '💍', label: 'Wedding',     color: '#f06292' },
+        { icon: '🎂', label: 'Birthday',    color: '#ffc107' },
+        { icon: '💼', label: 'Corporate',   color: '#0dcaf0' },
+        { icon: '🎓', label: 'Graduation',  color: '#20c997' },
+        { icon: '🎤', label: 'Concert',     color: '#a855f7' },
+        { icon: '🏆', label: 'Sports',      color: '#e94560' },
+        { icon: '📸', label: 'Photo Shoot', color: '#fd7e14' },
+        { icon: '🥳', label: 'Party',       color: '#6f42c1' },
+        { icon: '❤️',  label: 'Love Story',  color: '#dc3545' },
+        { icon: '🌟', label: 'Memories',   color: '#ffd700' },
+        { icon: '📷', label: 'Captured',   color: '#17a2b8' },
+        { icon: '🎉', label: 'Celebrate',  color: '#28a745' },
+      ];
+
+      let balls = [];
+
+      function resize() {
+        W = canvas.width  = sec.offsetWidth;
+        H = canvas.height = sec.offsetHeight;
+      }
+
+      function init() {
+        balls = ITEMS.map((item, i) => ({
+          ...item,
+          x:  80 + Math.random() * (W - 160),
+          y:  H * 0.3 + Math.random() * H * 0.5,
+          vx: (Math.random() - 0.5) * 1.2,
+          vy: -0.4 - Math.random() * 0.8,   // initial upward drift
+          r:  38 + Math.random() * 14,
+          wobble: Math.random() * Math.PI * 2,
+          wobbleSpeed: 0.018 + Math.random() * 0.012,
+        }));
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+
+        balls.forEach(b => {
+          b.wobble += b.wobbleSpeed;
+
+          // Antigravity: very slight upward pull
+          b.vy -= 0.012;
+
+          // Cursor repulsion
+          const dx = b.x - mouse.x;
+          const dy = b.y - mouse.y;
+          const dist = Math.sqrt(dx*dx + dy*dy);
+          const repelRadius = 130;
+          if (dist < repelRadius && dist > 0) {
+            const force = (repelRadius - dist) / repelRadius;
+            b.vx += (dx / dist) * force * 2.8;
+            b.vy += (dy / dist) * force * 2.8;
+          }
+
+          // Damping
+          b.vx *= 0.97;
+          b.vy *= 0.97;
+
+          // Clamp speed
+          const spd = Math.sqrt(b.vx*b.vx + b.vy*b.vy);
+          if (spd > 5) { b.vx = b.vx/spd*5; b.vy = b.vy/spd*5; }
+
+          b.x += b.vx;
+          b.y += b.vy;
+
+          // Wrap edges (antigravity: wrap top→bottom)
+          if (b.x < -b.r)       b.x = W + b.r;
+          if (b.x > W + b.r)    b.x = -b.r;
+          if (b.y < -b.r * 2)   b.y = H + b.r;
+          if (b.y > H + b.r)    b.y = -b.r;
+
+          // Wobble offset
+          const wx = Math.sin(b.wobble) * 3;
+          const wy = Math.cos(b.wobble * 0.7) * 2;
+
+          // Draw pill card
+          const px = b.x + wx, py = b.y + wy;
+          const pw = b.r * 2.8, ph = b.r * 1.55;
+          const rx = 14;
+
+          // Shadow
+          ctx.save();
+          ctx.shadowColor = b.color;
+          ctx.shadowBlur  = 18;
+
+          // Background
+          ctx.beginPath();
+          ctx.roundRect(px - pw/2, py - ph/2, pw, ph, rx);
+          ctx.fillStyle = 'rgba(10,14,26,0.72)';
+          ctx.fill();
+
+          // Glowing border
+          ctx.strokeStyle = b.color;
+          ctx.lineWidth = 2;
+          ctx.stroke();
+          ctx.restore();
+
+          // Icon
+          ctx.font = `${b.r * 0.72}px serif`;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(b.icon, px - pw * 0.18, py);
+
+          // Label
+          ctx.font = `600 ${b.r * 0.34}px system-ui, sans-serif`;
+          ctx.fillStyle = '#fff';
+          ctx.fillText(b.label, px + pw * 0.12, py);
+        });
+
+        // Ball-ball soft repulsion
+        for (let i = 0; i < balls.length; i++) {
+          for (let j = i+1; j < balls.length; j++) {
+            const a = balls[i], bb2 = balls[j];
+            const dx = a.x - bb2.x, dy = a.y - bb2.y;
+            const d  = Math.sqrt(dx*dx + dy*dy);
+            const minD = a.r + bb2.r + 10;
+            if (d < minD && d > 0) {
+              const push = (minD - d) / minD * 0.4;
+              a.vx  += (dx/d) * push;  a.vy  += (dy/d) * push;
+              bb2.vx -= (dx/d) * push; bb2.vy -= (dy/d) * push;
+            }
+          }
+        }
+
+        requestAnimationFrame(draw);
+      }
+
+      sec.addEventListener('mousemove', e => {
+        const r = sec.getBoundingClientRect();
+        mouse.x = e.clientX - r.left;
+        mouse.y = e.clientY - r.top;
+      });
+      sec.addEventListener('mouseleave', () => { mouse.x = -999; mouse.y = -999; });
+
+      // Click: blast all balls away from click point
+      sec.addEventListener('click', e => {
+        if (e.target.closest('.antigrav-content')) return;
+        const r = sec.getBoundingClientRect();
+        const cx = e.clientX - r.left, cy = e.clientY - r.top;
+        balls.forEach(b => {
+          const dx = b.x - cx, dy = b.y - cy;
+          const d  = Math.sqrt(dx*dx + dy*dy) || 1;
+          b.vx += (dx/d) * 6;
+          b.vy += (dy/d) * 6;
+        });
+      });
+
+      window.addEventListener('resize', () => { resize(); init(); });
+      resize(); init(); draw();
+    })();
+>>>>>>> b5b2bf2 (Updated user folder files)
   </script>
 </body>
 </html>

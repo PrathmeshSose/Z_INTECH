@@ -3,15 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< HEAD
+=======
+  <meta name="description" content="Browse and download your event photos in a beautiful private gallery." />
+>>>>>>> b5b2bf2 (Updated user folder files)
   <title>Gallery – Event Gallery</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
   <link href="../css/gallery.css" rel="stylesheet" />
+<<<<<<< HEAD
+=======
+  <link href="../css/darkmode.css" rel="stylesheet" />
+  <link href="../css/transitions.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+>>>>>>> b5b2bf2 (Updated user folder files)
 </head>
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
     <div class="container">
+<<<<<<< HEAD
       <a class="navbar-brand fw-bold" href="../index.html">
         <i class="bi bi-camera-fill me-2"></i>Event Gallery
       </a>
@@ -19,26 +30,99 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="nav">
+=======
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="../index.html">
+        <span class="brand-logo"><i class="bi bi-camera-fill"></i></span>
+        Event Gallery
+      </a>
+      <button class="navbar-toggler border-0" type="button" id="navToggler">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse" id="nav">
+        <div class="nav-drawer-close"><button onclick="closeNav()">&times;</button></div>
+>>>>>>> b5b2bf2 (Updated user folder files)
         <ul class="navbar-nav ms-auto gap-1">
           <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
+<<<<<<< HEAD
+=======
+      <div class="nav-overlay" id="navOverlay" onclick="closeNav()"></div>
+>>>>>>> b5b2bf2 (Updated user folder files)
     </div>
   </nav>
 
   <div class="container py-5">
+<<<<<<< HEAD
     <div class="d-flex align-items-center justify-content-between mb-3">
+=======
+
+    <!-- Expiry Warning Banner -->
+    <div id="expiryBanner" class="alert alert-warning alert-dismissible d-flex align-items-center gap-2 rounded-4 mb-4" role="alert" style="display:none!important">
+      <i class="bi bi-exclamation-triangle-fill fs-5"></i>
+      <div><strong>Gallery expiring soon!</strong> This gallery will be deleted in <span id="expiryDays"></span> days. Download your photos now.</div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+
+    <!-- Event Cover + Info -->
+    <div class="position-relative mb-4 rounded-4 overflow-hidden" style="height:200px">
+      <img src="https://picsum.photos/seed/cover/1200/400" class="w-100 h-100" style="object-fit:cover" alt="Event Cover" loading="lazy" />
+      <div class="position-absolute inset-0 d-flex flex-column justify-content-end p-4" style="background:linear-gradient(to top,rgba(0,0,0,.7),transparent);inset:0">
+        <h4 class="text-white fw-bold mb-0">Summer Wedding 2025</h4>
+        <small class="text-white-50"><i class="bi bi-calendar3 me-1"></i>June 15, 2025 &nbsp;|&nbsp; <i class="bi bi-clock me-1"></i>Expires in: <span id="expiryCountdown" class="text-warning fw-semibold"></span></small>
+      </div>
+    </div>
+
+    <!-- Photographer Branding -->
+    <div class="card border-0 shadow-sm rounded-4 p-3 mb-4 d-flex flex-row align-items-center gap-3">
+      <img src="https://i.pravatar.cc/80?img=11" class="rounded-circle" width="56" height="56" alt="Photographer" style="object-fit:cover;border:2px solid #0f3460" loading="lazy" />
+      <div>
+        <div class="fw-bold">Alex Johnson Photography</div>
+        <small class="text-muted"><i class="bi bi-envelope me-1"></i>alex@photography.com &nbsp;|&nbsp; <i class="bi bi-telephone me-1"></i>+1 (555) 123-4567</small>
+      </div>
+    </div>
+
+    <div class="d-flex align-items-start align-items-md-center justify-content-between mb-3 flex-column flex-md-row gap-2">
+>>>>>>> b5b2bf2 (Updated user folder files)
       <div>
         <h4 class="fw-bold mb-0">Event Photos</h4>
         <p class="text-muted small mb-0">Code: <span class="badge bg-primary">EVENT2025</span></p>
       </div>
+<<<<<<< HEAD
       <div class="d-flex align-items-center gap-2">
         <span class="badge bg-secondary rounded-pill" id="photoCount">8 Photos</span>
         <a href="access.html" class="btn btn-outline-primary btn-sm rounded-pill">
           <i class="bi bi-arrow-left me-1"></i>Change Event
         </a>
+=======
+      <div class="d-flex align-items-center gap-2 flex-wrap">
+        <span class="badge bg-secondary rounded-pill" id="photoCount">8 Photos</span>
+        <button class="btn btn-outline-secondary btn-sm rounded-pill" id="selectAllBtn" onclick="toggleSelectAll()">
+          <i class="bi bi-check2-square me-1"></i>Select All
+        </button>
+        <button class="btn btn-outline-danger btn-sm rounded-pill" onclick="filterFavs()" id="favFilterBtn">
+          <i class="bi bi-heart-fill me-1"></i>Favourites
+        </button>
+        <button class="btn btn-primary btn-sm rounded-pill d-none" id="downloadSelectedBtn" onclick="downloadSelected()">
+          <i class="bi bi-download me-1"></i>Download Selected (<span id="selectedCount">0</span>)
+        </button>
+        <button class="btn btn-outline-success btn-sm rounded-pill" onclick="startSlideshow()">
+          <i class="bi bi-play-circle me-1"></i>Slideshow
+        </button>
+        <button class="btn btn-success btn-sm rounded-pill" onclick="downloadAllZip()">
+          <i class="bi bi-file-zip me-1"></i>Download All
+        </button>
+        <a href="access.html" class="btn btn-outline-primary btn-sm rounded-pill">
+          <i class="bi bi-arrow-left me-1"></i>Change Event
+        </a>
+        <select class="form-select form-select-sm rounded-pill" style="width:auto" onchange="sortPhotos(this.value)">
+          <option value="default">Sort: Default</option>
+          <option value="asc">Name A–Z</option>
+          <option value="desc">Name Z–A</option>
+        </select>
+>>>>>>> b5b2bf2 (Updated user folder files)
       </div>
     </div>
 
@@ -51,6 +135,7 @@
       </button>
     </div>
 
+<<<<<<< HEAD
     <div class="row g-3" id="photoGrid">
       <div class="col-6 col-md-4 col-lg-3 photo-col" data-title="Photo 1">
         <div class="card photo-card shadow-sm border-0 h-100" onclick="openLightbox(0)">
@@ -126,6 +211,19 @@
       </div>
     </div>
 
+=======
+    <!-- Size Slider (Google Photos style) -->
+    <div class="size-slider-bar d-flex align-items-center gap-3 mb-3">
+      <i class="bi bi-grid-3x3 text-muted" style="font-size:.85rem"></i>
+      <input type="range" id="sizeSlider" min="1" max="5" value="3" step="1" class="form-range flex-grow-1" style="max-width:180px" title="Resize photos" />
+      <i class="bi bi-square-fill text-muted" style="font-size:1.1rem"></i>
+      <span class="text-muted small" id="sizeLabel">Medium</span>
+    </div>
+
+    <!-- Photo Grid -->
+    <div id="photoGrid" class="photo-grid"></div>
+
+>>>>>>> b5b2bf2 (Updated user folder files)
     <!-- No results -->
     <div id="noResults" class="text-center py-5" style="display:none">
       <i class="bi bi-search display-4 text-muted"></i>
@@ -133,6 +231,21 @@
     </div>
   </div>
 
+<<<<<<< HEAD
+=======
+  <!-- Slideshow Overlay -->
+  <div id="slideshow" style="display:none;position:fixed;inset:0;background:#000;z-index:10000;flex-direction:column;align-items:center;justify-content:center">
+    <button onclick="stopSlideshow()" style="position:absolute;top:1rem;right:1.5rem;background:none;border:none;color:#fff;font-size:2rem;">&times;</button>
+    <img id="ssImg" src="" style="max-width:90vw;max-height:85vh;object-fit:contain;border-radius:.75rem" />
+    <div style="color:#adb5bd;margin-top:1rem;font-size:.9rem" id="ssLabel"></div>
+    <div style="position:absolute;bottom:1.5rem;display:flex;gap:.5rem">
+      <button onclick="ssPrev()" class="btn btn-outline-light btn-sm rounded-pill"><i class="bi bi-chevron-left"></i></button>
+      <button id="ssPauseBtn" onclick="togglePause()" class="btn btn-outline-light btn-sm rounded-pill"><i class="bi bi-pause-fill"></i></button>
+      <button onclick="ssNext()" class="btn btn-outline-light btn-sm rounded-pill"><i class="bi bi-chevron-right"></i></button>
+    </div>
+  </div>
+
+>>>>>>> b5b2bf2 (Updated user folder files)
   <!-- Lightbox -->
   <div id="lightbox">
     <span class="lb-close" onclick="closeLightbox()">&times;</span>
@@ -158,7 +271,18 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
+<<<<<<< HEAD
         <div class="col-md-4">
+=======
+        <div class="col-md-2">
+          <h6 class="fw-bold mb-3">Legal</h6>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-1"><a href="../privacy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+>>>>>>> b5b2bf2 (Updated user folder files)
           <h6 class="fw-bold mb-3">Contact</h6>
           <ul class="list-unstyled small text-secondary mb-0">
             <li class="mb-1"><i class="bi bi-envelope-fill me-2"></i>hello@eventgallery.com</li>
@@ -173,6 +297,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<<<<<<< HEAD
   <script>
     const photos = [
       { src: 'https://picsum.photos/seed/w1/1200/800', title: 'Photo 1' },
@@ -240,6 +365,270 @@
       searchInput.dispatchEvent(new Event('input'));
       searchInput.focus();
     });
+=======
+  <button id="darkToggle" onclick="toggleDark()" title="Toggle dark mode"><i class="bi bi-moon-fill"></i></button>
+  <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top" style="position:fixed;bottom:1.25rem;right:1.25rem;z-index:998;width:44px;height:44px;border-radius:50%;border:none;background:#0f3460;color:#fff;font-size:1.1rem;display:none;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.3);cursor:pointer"><i class="bi bi-arrow-up"></i></button>
+  <script>
+    // Navbar drawer
+    function openNav() { document.getElementById('nav').classList.add('show'); document.getElementById('navOverlay').classList.add('show'); document.body.style.overflow='hidden'; }
+    function closeNav() { document.getElementById('nav').classList.remove('show'); document.getElementById('navOverlay').classList.remove('show'); document.body.style.overflow=''; }
+    document.getElementById('navToggler').addEventListener('click', openNav);
+
+    // Dark mode
+    function toggleDark() {
+      document.body.classList.toggle('dark');
+      const on = document.body.classList.contains('dark');
+      localStorage.setItem('dark', on);
+      document.getElementById('darkToggle').innerHTML = on ? '<i class="bi bi-sun-fill"></i>' : '<i class="bi bi-moon-fill"></i>';
+    }
+    if (localStorage.getItem('dark') === 'true') { document.body.classList.add('dark'); document.addEventListener('DOMContentLoaded', () => { document.getElementById('darkToggle').innerHTML = '<i class="bi bi-sun-fill"></i>'; }); }
+
+    // Page transition
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('mailto') || a.target) return;
+        a.addEventListener('click', e => { e.preventDefault(); document.body.classList.add('page-leave'); setTimeout(() => window.location = href, 280); });
+      });
+    });
+
+    // Back to top
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('backToTop');
+      btn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+    });
+
+    // Expiry countdown
+    const expiry = new Date('2025-09-15');
+    (function updateCountdown() {
+      const diff = expiry - new Date();
+      if (diff <= 0) { document.getElementById('expiryCountdown').textContent = 'Expired'; return; }
+      const days = Math.floor(diff / 86400000);
+      document.getElementById('expiryCountdown').textContent = days + ' days';
+      if (days <= 7) { document.getElementById('expiryDays').textContent = days; document.getElementById('expiryBanner').style.removeProperty('display'); }
+    })();
+
+    // ── Photo data ──────────────────────────────
+    const photos = [
+      { src: 'https://picsum.photos/seed/w1/1200/800', thumb: 'https://picsum.photos/seed/w1/400/300',  title: 'Photo 1' },
+      { src: 'https://picsum.photos/seed/w2/1200/800', thumb: 'https://picsum.photos/seed/w2/400/500',  title: 'Photo 2' },
+      { src: 'https://picsum.photos/seed/w3/1200/800', thumb: 'https://picsum.photos/seed/w3/400/260',  title: 'Photo 3' },
+      { src: 'https://picsum.photos/seed/w4/1200/800', thumb: 'https://picsum.photos/seed/w4/400/420',  title: 'Photo 4' },
+      { src: 'https://picsum.photos/seed/w5/1200/800', thumb: 'https://picsum.photos/seed/w5/400/300',  title: 'Photo 5' },
+      { src: 'https://picsum.photos/seed/w6/1200/800', thumb: 'https://picsum.photos/seed/w6/400/460',  title: 'Photo 6' },
+      { src: 'https://picsum.photos/seed/w7/1200/800', thumb: 'https://picsum.photos/seed/w7/400/280',  title: 'Photo 7' },
+      { src: 'https://picsum.photos/seed/w8/1200/800', thumb: 'https://picsum.photos/seed/w8/400/380',  title: 'Photo 8' },
+    ];
+
+    // ── Size slider config ──────────────────────
+    // columns: [tiny, small, medium, large, xlarge]
+    const SIZE_COLS   = [8, 6, 4, 3, 2];
+    const SIZE_LABELS = ['Tiny', 'Small', 'Medium', 'Large', 'X-Large'];
+    let currentSize = 3; // default = medium (index 2)
+
+    const grid      = document.getElementById('photoGrid');
+    const slider    = document.getElementById('sizeSlider');
+    const sizeLabel = document.getElementById('sizeLabel');
+
+    function applySize(val) {
+      currentSize = val;
+      const cols = SIZE_COLS[val - 1];
+      grid.style.setProperty('--cols', cols);
+      sizeLabel.textContent = SIZE_LABELS[val - 1];
+    }
+
+    slider.addEventListener('input', () => applySize(+slider.value));
+    applySize(3);
+
+    // ── Build masonry cards ─────────────────────
+    let favs      = JSON.parse(localStorage.getItem('favs') || '[]');
+    let selectMode = false;
+    let showingFavs = false;
+    let sortOrder   = 'default';
+    let searchQuery = '';
+
+    function buildGrid() {
+      grid.innerHTML = '';
+      let visible = 0;
+      const sorted = [...photos];
+      if (sortOrder === 'asc')  sorted.sort((a,b) => a.title.localeCompare(b.title));
+      if (sortOrder === 'desc') sorted.sort((a,b) => b.title.localeCompare(a.title));
+
+      sorted.forEach((p, i) => {
+        const origIdx = photos.indexOf(p);
+        const matchSearch = p.title.toLowerCase().includes(searchQuery);
+        const matchFav    = !showingFavs || favs.includes(origIdx);
+        if (!matchSearch || !matchFav) return;
+        visible++;
+
+        const col = document.createElement('div');
+        col.className = 'photo-col';
+        col.dataset.title = p.title;
+        col.dataset.index = origIdx;
+        col.innerHTML = `
+          <div class="photo-card" onclick="handleCardClick(event,${origIdx})">
+            <div class="tilt-shine"></div>
+            <div class="photo-check">
+              <input type="checkbox" class="photo-checkbox form-check-input"
+                data-index="${origIdx}" data-src="${p.src}"
+                onclick="event.stopPropagation();toggleCheck(this)" />
+            </div>
+            <button class="btn-fav ${favs.includes(origIdx)?'active':''}" data-index="${origIdx}"
+              onclick="event.stopPropagation();toggleFav(this)">
+              <i class="bi bi-heart-fill"></i>
+            </button>
+            <img src="${p.thumb}" alt="${p.title}" loading="lazy" />
+            <div class="card-overlay">
+              <small>${p.title}</small>
+              <a href="view.html?index=${origIdx}" class="btn btn-sm btn-light rounded-pill px-2 py-0"
+                onclick="event.stopPropagation()" style="font-size:.7rem">
+                <i class="bi bi-eye"></i>
+              </a>
+            </div>
+          </div>`;
+        grid.appendChild(col);
+
+        // 3D tilt
+        const card = col.querySelector('.photo-card');
+        card.addEventListener('mousemove', e => {
+          const r = card.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width  - 0.5;
+          const y = (e.clientY - r.top)  / r.height - 0.5;
+          card.style.transform = `perspective(600px) rotateY(${x*12}deg) rotateX(${-y*12}deg) scale(1.03)`;
+          card.style.boxShadow = `${-x*10}px ${-y*10}px 24px rgba(15,52,96,.2)`;
+          const shine = card.querySelector('.tilt-shine');
+          shine.style.background = `radial-gradient(circle at ${(x+.5)*100}% ${(y+.5)*100}%, rgba(255,255,255,.22) 0%, transparent 65%)`;
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = '';
+          card.style.boxShadow = '';
+        });
+      });
+
+      document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+      document.getElementById('photoCount').textContent = visible + ' Photo' + (visible !== 1 ? 's' : '');
+    }
+
+    buildGrid();
+
+    // ── Favourites ──────────────────────────────
+    function toggleFav(btn) {
+      const index = +btn.dataset.index;
+      const wasActive = btn.classList.contains('active');
+      if (wasActive) {
+        favs = favs.filter(i => i !== index);
+        btn.classList.remove('active');
+      } else {
+        favs.push(index);
+        btn.classList.add('active');
+        const r = btn.getBoundingClientRect();
+        spawnConfetti(r.left + r.width/2, r.top + r.height/2);
+      }
+      localStorage.setItem('favs', JSON.stringify(favs));
+    }
+
+    function filterFavs() {
+      showingFavs = !showingFavs;
+      document.getElementById('favFilterBtn').classList.toggle('btn-danger', showingFavs);
+      document.getElementById('favFilterBtn').classList.toggle('btn-outline-danger', !showingFavs);
+      buildGrid();
+    }
+
+    // ── Selection ───────────────────────────────
+    function handleCardClick(e, index) {
+      const cb = e.currentTarget.querySelector('.photo-checkbox');
+      if (selectMode) { cb.checked = !cb.checked; updateSelection(); }
+      else openLightbox(index);
+    }
+    function toggleCheck(cb) { updateSelection(); }
+    function updateSelection() {
+      const checked = document.querySelectorAll('.photo-checkbox:checked');
+      const count = checked.length;
+      document.getElementById('selectedCount').textContent = count;
+      document.getElementById('downloadSelectedBtn').classList.toggle('d-none', count === 0);
+      selectMode = count > 0;
+    }
+    function toggleSelectAll() {
+      const all = document.querySelectorAll('.photo-checkbox');
+      const anyUnchecked = [...all].some(c => !c.checked);
+      all.forEach(c => c.checked = anyUnchecked);
+      updateSelection();
+    }
+    function downloadSelected() {
+      document.querySelectorAll('.photo-checkbox:checked').forEach((cb, i) => {
+        setTimeout(() => { const a = document.createElement('a'); a.href = cb.dataset.src; a.download = 'photo-'+(+cb.dataset.index+1)+'.jpg'; a.click(); }, i * 300);
+      });
+    }
+
+    // ── Sort ────────────────────────────────────
+    function sortPhotos(order) { sortOrder = order; buildGrid(); }
+
+    // ── Search ──────────────────────────────────
+    const searchInput = document.getElementById('searchInput');
+    const clearBtn    = document.getElementById('clearSearch');
+    searchInput.addEventListener('input', () => {
+      searchQuery = searchInput.value.trim().toLowerCase();
+      clearBtn.style.display = searchQuery ? 'block' : 'none';
+      buildGrid();
+    });
+    clearBtn.addEventListener('click', () => { searchInput.value = ''; searchQuery = ''; clearBtn.style.display = 'none'; buildGrid(); searchInput.focus(); });
+
+    // ── Download all zip ────────────────────────
+    async function downloadAllZip() {
+      const btn = event.currentTarget;
+      btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Zipping...';
+      btn.disabled = true;
+      const zip = new JSZip();
+      await Promise.all(photos.map(async (p, i) => {
+        const res = await fetch(p.src); const blob = await res.blob();
+        zip.file('photo-'+(i+1)+'.jpg', blob);
+      }));
+      const content = await zip.generateAsync({ type: 'blob' });
+      const a = document.createElement('a'); a.href = URL.createObjectURL(content); a.download = 'EVENT2025-photos.zip'; a.click();
+      btn.innerHTML = '<i class="bi bi-file-zip me-1"></i>Download All'; btn.disabled = false;
+    }
+
+    // ── Lightbox ────────────────────────────────
+    let current = 0;
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbCounter = document.getElementById('lbCounter');
+    function openLightbox(index) {
+      current = index; lbImg.src = photos[current].src;
+      lbCounter.textContent = (current+1)+' / '+photos.length+'  —  '+photos[current].title;
+      lb.classList.add('active'); document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() { lb.classList.remove('active'); document.body.style.overflow = ''; }
+    function lbPrev() { current = (current-1+photos.length)%photos.length; openLightbox(current); }
+    function lbNext() { current = (current+1)%photos.length; openLightbox(current); }
+    document.addEventListener('keydown', e => {
+      if (!lb.classList.contains('active')) return;
+      if (e.key==='ArrowLeft') lbPrev(); if (e.key==='ArrowRight') lbNext(); if (e.key==='Escape') closeLightbox();
+    });
+    lb.addEventListener('click', e => { if (e.target===lb) closeLightbox(); });
+
+    // ── Slideshow ───────────────────────────────
+    let ssIndex=0, ssTimer=null, ssPaused=false;
+    const ssEl=document.getElementById('slideshow'), ssImg=document.getElementById('ssImg'), ssLbl=document.getElementById('ssLabel');
+    function startSlideshow() { ssIndex=0; ssPaused=false; ssEl.style.display='flex'; document.body.style.overflow='hidden'; showSlide(); }
+    function stopSlideshow() { clearInterval(ssTimer); ssEl.style.display='none'; document.body.style.overflow=''; }
+    function showSlide() { clearInterval(ssTimer); ssImg.src=photos[ssIndex].src; ssLbl.textContent=photos[ssIndex].title+'  —  '+(ssIndex+1)+' / '+photos.length; if(!ssPaused) ssTimer=setInterval(ssNext,3000); }
+    function ssNext() { ssIndex=(ssIndex+1)%photos.length; showSlide(); }
+    function ssPrev() { ssIndex=(ssIndex-1+photos.length)%photos.length; showSlide(); }
+    function togglePause() { ssPaused=!ssPaused; document.getElementById('ssPauseBtn').innerHTML=ssPaused?'<i class="bi bi-play-fill"></i>':'<i class="bi bi-pause-fill"></i>'; showSlide(); }
+
+    // ── Confetti ────────────────────────────────
+    const COLORS = ['#e94560','#ffc107','#0dcaf0','#20c997','#a855f7','#fd7e14'];
+    function spawnConfetti(x, y) {
+      for (let i=0; i<18; i++) {
+        const el = document.createElement('div');
+        el.className = 'confetti-piece';
+        el.style.cssText = `left:${x}px;top:${y}px;background:${COLORS[i%COLORS.length]};--tx:${(Math.random()-.5)*120}px;--ty:${-(40+Math.random()*80)}px;animation-delay:${Math.random()*.15}s`;
+        document.body.appendChild(el);
+        el.addEventListener('animationend', () => el.remove());
+      }
+    }
+>>>>>>> b5b2bf2 (Updated user folder files)
   </script>
 </body>
 </html>
