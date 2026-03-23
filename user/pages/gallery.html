@@ -3,34 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<<<<<<< HEAD
-=======
   <meta name="description" content="Browse and download your event photos in a beautiful private gallery." />
->>>>>>> b5b2bf2 (Updated user folder files)
   <title>Gallery – Event Gallery</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
   <link href="../css/gallery.css" rel="stylesheet" />
-<<<<<<< HEAD
-=======
   <link href="../css/darkmode.css" rel="stylesheet" />
   <link href="../css/transitions.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
->>>>>>> b5b2bf2 (Updated user folder files)
 </head>
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
     <div class="container">
-<<<<<<< HEAD
-      <a class="navbar-brand fw-bold" href="../index.html">
-        <i class="bi bi-camera-fill me-2"></i>Event Gallery
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="nav">
-=======
       <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="../index.html">
         <span class="brand-logo"><i class="bi bi-camera-fill"></i></span>
         Event Gallery
@@ -40,24 +25,17 @@
       </button>
       <div class="navbar-collapse" id="nav">
         <div class="nav-drawer-close"><button onclick="closeNav()">&times;</button></div>
->>>>>>> b5b2bf2 (Updated user folder files)
         <ul class="navbar-nav ms-auto gap-1">
           <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
-<<<<<<< HEAD
-=======
       <div class="nav-overlay" id="navOverlay" onclick="closeNav()"></div>
->>>>>>> b5b2bf2 (Updated user folder files)
     </div>
   </nav>
 
   <div class="container py-5">
-<<<<<<< HEAD
-    <div class="d-flex align-items-center justify-content-between mb-3">
-=======
 
     <!-- Expiry Warning Banner -->
     <div id="expiryBanner" class="alert alert-warning alert-dismissible d-flex align-items-center gap-2 rounded-4 mb-4" role="alert" style="display:none!important">
@@ -85,18 +63,10 @@
     </div>
 
     <div class="d-flex align-items-start align-items-md-center justify-content-between mb-3 flex-column flex-md-row gap-2">
->>>>>>> b5b2bf2 (Updated user folder files)
       <div>
         <h4 class="fw-bold mb-0">Event Photos</h4>
         <p class="text-muted small mb-0">Code: <span class="badge bg-primary">EVENT2025</span></p>
       </div>
-<<<<<<< HEAD
-      <div class="d-flex align-items-center gap-2">
-        <span class="badge bg-secondary rounded-pill" id="photoCount">8 Photos</span>
-        <a href="access.html" class="btn btn-outline-primary btn-sm rounded-pill">
-          <i class="bi bi-arrow-left me-1"></i>Change Event
-        </a>
-=======
       <div class="d-flex align-items-center gap-2 flex-wrap">
         <span class="badge bg-secondary rounded-pill" id="photoCount">8 Photos</span>
         <button class="btn btn-outline-secondary btn-sm rounded-pill" id="selectAllBtn" onclick="toggleSelectAll()">
@@ -122,7 +92,6 @@
           <option value="asc">Name A–Z</option>
           <option value="desc">Name Z–A</option>
         </select>
->>>>>>> b5b2bf2 (Updated user folder files)
       </div>
     </div>
 
@@ -135,84 +104,7 @@
       </button>
     </div>
 
-<<<<<<< HEAD
-    <div class="row g-3" id="photoGrid">
-      <div class="col-6 col-md-4 col-lg-3 photo-col" data-title="Photo 1">
-        <div class="card photo-card shadow-sm border-0 h-100" onclick="openLightbox(0)">
-          <img src="https://picsum.photos/seed/w1/400/300" class="card-img-top w-100" alt="Photo 1" />
-          <div class="card-body p-2 d-flex justify-content-between align-items-center">
-            <small class="text-muted">Photo 1</small>
-            <a href="view.html" class="btn btn-sm btn-outline-primary rounded-pill" onclick="event.stopPropagation()"><i class="bi bi-eye"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3 photo-col" data-title="Photo 2">
-        <div class="card photo-card shadow-sm border-0 h-100" onclick="openLightbox(1)">
-          <img src="https://picsum.photos/seed/w2/400/300" class="card-img-top w-100" alt="Photo 2" />
-          <div class="card-body p-2 d-flex justify-content-between align-items-center">
-            <small class="text-muted">Photo 2</small>
-            <a href="view.html" class="btn btn-sm btn-outline-primary rounded-pill" onclick="event.stopPropagation()"><i class="bi bi-eye"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3 photo-col" data-title="Photo 3">
-        <div class="card photo-card shadow-sm border-0 h-100" onclick="openLightbox(2)">
-          <img src="https://picsum.photos/seed/w3/400/300" class="card-img-top w-100" alt="Photo 3" />
-          <div class="card-body p-2 d-flex justify-content-between align-items-center">
-            <small class="text-muted">Photo 3</small>
-            <a href="view.html" class="btn btn-sm btn-outline-primary rounded-pill" onclick="event.stopPropagation()"><i class="bi bi-eye"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3 photo-col" data-title="Photo 4">
-        <div class="card photo-card shadow-sm border-0 h-100" onclick="openLightbox(3)">
-          <img src="https://picsum.photos/seed/w4/400/300" class="card-img-top w-100" alt="Photo 4" />
-          <div class="card-body p-2 d-flex justify-content-between align-items-center">
-            <small class="text-muted">Photo 4</small>
-            <a href="view.html" class="btn btn-sm btn-outline-primary rounded-pill" onclick="event.stopPropagation()"><i class="bi bi-eye"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3 photo-col" data-title="Photo 5">
-        <div class="card photo-card shadow-sm border-0 h-100" onclick="openLightbox(4)">
-          <img src="https://picsum.photos/seed/w5/400/300" class="card-img-top w-100" alt="Photo 5" />
-          <div class="card-body p-2 d-flex justify-content-between align-items-center">
-            <small class="text-muted">Photo 5</small>
-            <a href="view.html" class="btn btn-sm btn-outline-primary rounded-pill" onclick="event.stopPropagation()"><i class="bi bi-eye"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3 photo-col" data-title="Photo 6">
-        <div class="card photo-card shadow-sm border-0 h-100" onclick="openLightbox(5)">
-          <img src="https://picsum.photos/seed/w6/400/300" class="card-img-top w-100" alt="Photo 6" />
-          <div class="card-body p-2 d-flex justify-content-between align-items-center">
-            <small class="text-muted">Photo 6</small>
-            <a href="view.html" class="btn btn-sm btn-outline-primary rounded-pill" onclick="event.stopPropagation()"><i class="bi bi-eye"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3 photo-col" data-title="Photo 7">
-        <div class="card photo-card shadow-sm border-0 h-100" onclick="openLightbox(6)">
-          <img src="https://picsum.photos/seed/w7/400/300" class="card-img-top w-100" alt="Photo 7" />
-          <div class="card-body p-2 d-flex justify-content-between align-items-center">
-            <small class="text-muted">Photo 7</small>
-            <a href="view.html" class="btn btn-sm btn-outline-primary rounded-pill" onclick="event.stopPropagation()"><i class="bi bi-eye"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 col-md-4 col-lg-3 photo-col" data-title="Photo 8">
-        <div class="card photo-card shadow-sm border-0 h-100" onclick="openLightbox(7)">
-          <img src="https://picsum.photos/seed/w8/400/300" class="card-img-top w-100" alt="Photo 8" />
-          <div class="card-body p-2 d-flex justify-content-between align-items-center">
-            <small class="text-muted">Photo 8</small>
-            <a href="view.html" class="btn btn-sm btn-outline-primary rounded-pill" onclick="event.stopPropagation()"><i class="bi bi-eye"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-=======
-    <!-- Size Slider (Google Photos style) -->
+    <!-- Size Slider -->
     <div class="size-slider-bar d-flex align-items-center gap-3 mb-3">
       <i class="bi bi-grid-3x3 text-muted" style="font-size:.85rem"></i>
       <input type="range" id="sizeSlider" min="1" max="5" value="3" step="1" class="form-range flex-grow-1" style="max-width:180px" title="Resize photos" />
@@ -223,7 +115,6 @@
     <!-- Photo Grid -->
     <div id="photoGrid" class="photo-grid"></div>
 
->>>>>>> b5b2bf2 (Updated user folder files)
     <!-- No results -->
     <div id="noResults" class="text-center py-5" style="display:none">
       <i class="bi bi-search display-4 text-muted"></i>
@@ -231,8 +122,6 @@
     </div>
   </div>
 
-<<<<<<< HEAD
-=======
   <!-- Slideshow Overlay -->
   <div id="slideshow" style="display:none;position:fixed;inset:0;background:#000;z-index:10000;flex-direction:column;align-items:center;justify-content:center">
     <button onclick="stopSlideshow()" style="position:absolute;top:1rem;right:1.5rem;background:none;border:none;color:#fff;font-size:2rem;">&times;</button>
@@ -245,7 +134,6 @@
     </div>
   </div>
 
->>>>>>> b5b2bf2 (Updated user folder files)
   <!-- Lightbox -->
   <div id="lightbox">
     <span class="lb-close" onclick="closeLightbox()">&times;</span>
@@ -271,9 +159,6 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
-<<<<<<< HEAD
-        <div class="col-md-4">
-=======
         <div class="col-md-2">
           <h6 class="fw-bold mb-3">Legal</h6>
           <ul class="list-unstyled small mb-0">
@@ -282,7 +167,6 @@
           </ul>
         </div>
         <div class="col-md-2">
->>>>>>> b5b2bf2 (Updated user folder files)
           <h6 class="fw-bold mb-3">Contact</h6>
           <ul class="list-unstyled small text-secondary mb-0">
             <li class="mb-1"><i class="bi bi-envelope-fill me-2"></i>hello@eventgallery.com</li>
@@ -297,84 +181,13 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<<<<<<< HEAD
-  <script>
-    const photos = [
-      { src: 'https://picsum.photos/seed/w1/1200/800', title: 'Photo 1' },
-      { src: 'https://picsum.photos/seed/w2/1200/800', title: 'Photo 2' },
-      { src: 'https://picsum.photos/seed/w3/1200/800', title: 'Photo 3' },
-      { src: 'https://picsum.photos/seed/w4/1200/800', title: 'Photo 4' },
-      { src: 'https://picsum.photos/seed/w5/1200/800', title: 'Photo 5' },
-      { src: 'https://picsum.photos/seed/w6/1200/800', title: 'Photo 6' },
-      { src: 'https://picsum.photos/seed/w7/1200/800', title: 'Photo 7' },
-      { src: 'https://picsum.photos/seed/w8/1200/800', title: 'Photo 8' },
-    ];
-    let current = 0;
-
-    const lb       = document.getElementById('lightbox');
-    const lbImg    = document.getElementById('lbImg');
-    const lbCounter = document.getElementById('lbCounter');
-
-    function openLightbox(index) {
-      current = index;
-      lbImg.src = photos[current].src;
-      lbCounter.textContent = (current + 1) + ' / ' + photos.length + '  —  ' + photos[current].title;
-      lb.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeLightbox() {
-      lb.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-    function lbPrev() { current = (current - 1 + photos.length) % photos.length; openLightbox(current); }
-    function lbNext() { current = (current + 1) % photos.length; openLightbox(current); }
-
-    // Keyboard navigation
-    document.addEventListener('keydown', e => {
-      if (!lb.classList.contains('active')) return;
-      if (e.key === 'ArrowLeft')  lbPrev();
-      if (e.key === 'ArrowRight') lbNext();
-      if (e.key === 'Escape')     closeLightbox();
-    });
-
-    // Close on backdrop click
-    lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
-
-    // Search / filter
-    const searchInput = document.getElementById('searchInput');
-    const clearBtn    = document.getElementById('clearSearch');
-    const cols        = document.querySelectorAll('.photo-col');
-    const noResults   = document.getElementById('noResults');
-    const photoCount  = document.getElementById('photoCount');
-
-    searchInput.addEventListener('input', () => {
-      const q = searchInput.value.trim().toLowerCase();
-      clearBtn.style.display = q ? 'block' : 'none';
-      let visible = 0;
-      cols.forEach(col => {
-        const match = col.dataset.title.toLowerCase().includes(q);
-        col.classList.toggle('hidden', !match);
-        if (match) visible++;
-      });
-      noResults.style.display = visible === 0 ? 'block' : 'none';
-      photoCount.textContent = visible + ' Photo' + (visible !== 1 ? 's' : '');
-    });
-
-    clearBtn.addEventListener('click', () => {
-      searchInput.value = '';
-      searchInput.dispatchEvent(new Event('input'));
-      searchInput.focus();
-    });
-=======
   <button id="darkToggle" onclick="toggleDark()" title="Toggle dark mode"><i class="bi bi-moon-fill"></i></button>
   <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top" style="position:fixed;bottom:1.25rem;right:1.25rem;z-index:998;width:44px;height:44px;border-radius:50%;border:none;background:#0f3460;color:#fff;font-size:1.1rem;display:none;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.3);cursor:pointer"><i class="bi bi-arrow-up"></i></button>
   <script>
-    // Navbar drawer
     function openNav() { document.getElementById('nav').classList.add('show'); document.getElementById('navOverlay').classList.add('show'); document.body.style.overflow='hidden'; }
     function closeNav() { document.getElementById('nav').classList.remove('show'); document.getElementById('navOverlay').classList.remove('show'); document.body.style.overflow=''; }
     document.getElementById('navToggler').addEventListener('click', openNav);
 
-    // Dark mode
     function toggleDark() {
       document.body.classList.toggle('dark');
       const on = document.body.classList.contains('dark');
@@ -383,7 +196,6 @@
     }
     if (localStorage.getItem('dark') === 'true') { document.body.classList.add('dark'); document.addEventListener('DOMContentLoaded', () => { document.getElementById('darkToggle').innerHTML = '<i class="bi bi-sun-fill"></i>'; }); }
 
-    // Page transition
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('a[href]').forEach(a => {
         const href = a.getAttribute('href');
@@ -392,13 +204,11 @@
       });
     });
 
-    // Back to top
     window.addEventListener('scroll', () => {
       const btn = document.getElementById('backToTop');
       btn.style.display = window.scrollY > 300 ? 'flex' : 'none';
     });
 
-    // Expiry countdown
     const expiry = new Date('2025-09-15');
     (function updateCountdown() {
       const diff = expiry - new Date();
@@ -408,7 +218,6 @@
       if (days <= 7) { document.getElementById('expiryDays').textContent = days; document.getElementById('expiryBanner').style.removeProperty('display'); }
     })();
 
-    // ── Photo data ──────────────────────────────
     const photos = [
       { src: 'https://picsum.photos/seed/w1/1200/800', thumb: 'https://picsum.photos/seed/w1/400/300',  title: 'Photo 1' },
       { src: 'https://picsum.photos/seed/w2/1200/800', thumb: 'https://picsum.photos/seed/w2/400/500',  title: 'Photo 2' },
@@ -420,28 +229,21 @@
       { src: 'https://picsum.photos/seed/w8/1200/800', thumb: 'https://picsum.photos/seed/w8/400/380',  title: 'Photo 8' },
     ];
 
-    // ── Size slider config ──────────────────────
-    // columns: [tiny, small, medium, large, xlarge]
     const SIZE_COLS   = [8, 6, 4, 3, 2];
     const SIZE_LABELS = ['Tiny', 'Small', 'Medium', 'Large', 'X-Large'];
-    let currentSize = 3; // default = medium (index 2)
 
     const grid      = document.getElementById('photoGrid');
     const slider    = document.getElementById('sizeSlider');
     const sizeLabel = document.getElementById('sizeLabel');
 
     function applySize(val) {
-      currentSize = val;
-      const cols = SIZE_COLS[val - 1];
-      grid.style.setProperty('--cols', cols);
+      grid.style.setProperty('--cols', SIZE_COLS[val - 1]);
       sizeLabel.textContent = SIZE_LABELS[val - 1];
     }
-
     slider.addEventListener('input', () => applySize(+slider.value));
     applySize(3);
 
-    // ── Build masonry cards ─────────────────────
-    let favs      = JSON.parse(localStorage.getItem('favs') || '[]');
+    let favs       = JSON.parse(localStorage.getItem('favs') || '[]');
     let selectMode = false;
     let showingFavs = false;
     let sortOrder   = 'default';
@@ -454,11 +256,10 @@
       if (sortOrder === 'asc')  sorted.sort((a,b) => a.title.localeCompare(b.title));
       if (sortOrder === 'desc') sorted.sort((a,b) => b.title.localeCompare(a.title));
 
-      sorted.forEach((p, i) => {
+      sorted.forEach((p) => {
         const origIdx = photos.indexOf(p);
-        const matchSearch = p.title.toLowerCase().includes(searchQuery);
-        const matchFav    = !showingFavs || favs.includes(origIdx);
-        if (!matchSearch || !matchFav) return;
+        if (!p.title.toLowerCase().includes(searchQuery)) return;
+        if (showingFavs && !favs.includes(origIdx)) return;
         visible++;
 
         const col = document.createElement('div');
@@ -488,7 +289,6 @@
           </div>`;
         grid.appendChild(col);
 
-        // 3D tilt
         const card = col.querySelector('.photo-card');
         card.addEventListener('mousemove', e => {
           const r = card.getBoundingClientRect();
@@ -499,10 +299,7 @@
           const shine = card.querySelector('.tilt-shine');
           shine.style.background = `radial-gradient(circle at ${(x+.5)*100}% ${(y+.5)*100}%, rgba(255,255,255,.22) 0%, transparent 65%)`;
         });
-        card.addEventListener('mouseleave', () => {
-          card.style.transform = '';
-          card.style.boxShadow = '';
-        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; card.style.boxShadow = ''; });
       });
 
       document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
@@ -511,11 +308,9 @@
 
     buildGrid();
 
-    // ── Favourites ──────────────────────────────
     function toggleFav(btn) {
       const index = +btn.dataset.index;
-      const wasActive = btn.classList.contains('active');
-      if (wasActive) {
+      if (btn.classList.contains('active')) {
         favs = favs.filter(i => i !== index);
         btn.classList.remove('active');
       } else {
@@ -534,7 +329,6 @@
       buildGrid();
     }
 
-    // ── Selection ───────────────────────────────
     function handleCardClick(e, index) {
       const cb = e.currentTarget.querySelector('.photo-checkbox');
       if (selectMode) { cb.checked = !cb.checked; updateSelection(); }
@@ -560,10 +354,8 @@
       });
     }
 
-    // ── Sort ────────────────────────────────────
     function sortPhotos(order) { sortOrder = order; buildGrid(); }
 
-    // ── Search ──────────────────────────────────
     const searchInput = document.getElementById('searchInput');
     const clearBtn    = document.getElementById('clearSearch');
     searchInput.addEventListener('input', () => {
@@ -573,7 +365,6 @@
     });
     clearBtn.addEventListener('click', () => { searchInput.value = ''; searchQuery = ''; clearBtn.style.display = 'none'; buildGrid(); searchInput.focus(); });
 
-    // ── Download all zip ────────────────────────
     async function downloadAllZip() {
       const btn = event.currentTarget;
       btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Zipping...';
@@ -588,7 +379,6 @@
       btn.innerHTML = '<i class="bi bi-file-zip me-1"></i>Download All'; btn.disabled = false;
     }
 
-    // ── Lightbox ────────────────────────────────
     let current = 0;
     const lb = document.getElementById('lightbox');
     const lbImg = document.getElementById('lbImg');
@@ -607,7 +397,6 @@
     });
     lb.addEventListener('click', e => { if (e.target===lb) closeLightbox(); });
 
-    // ── Slideshow ───────────────────────────────
     let ssIndex=0, ssTimer=null, ssPaused=false;
     const ssEl=document.getElementById('slideshow'), ssImg=document.getElementById('ssImg'), ssLbl=document.getElementById('ssLabel');
     function startSlideshow() { ssIndex=0; ssPaused=false; ssEl.style.display='flex'; document.body.style.overflow='hidden'; showSlide(); }
@@ -617,7 +406,6 @@
     function ssPrev() { ssIndex=(ssIndex-1+photos.length)%photos.length; showSlide(); }
     function togglePause() { ssPaused=!ssPaused; document.getElementById('ssPauseBtn').innerHTML=ssPaused?'<i class="bi bi-play-fill"></i>':'<i class="bi bi-pause-fill"></i>'; showSlide(); }
 
-    // ── Confetti ────────────────────────────────
     const COLORS = ['#e94560','#ffc107','#0dcaf0','#20c997','#a855f7','#fd7e14'];
     function spawnConfetti(x, y) {
       for (let i=0; i<18; i++) {
@@ -628,7 +416,6 @@
         el.addEventListener('animationend', () => el.remove());
       }
     }
->>>>>>> b5b2bf2 (Updated user folder files)
   </script>
 </body>
 </html>

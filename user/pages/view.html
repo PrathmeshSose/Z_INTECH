@@ -3,33 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<<<<<<< HEAD
-=======
   <meta name="description" content="View, zoom, download and share your event photo." />
->>>>>>> b5b2bf2 (Updated user folder files)
   <title>View Photo – Event Gallery</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
   <link href="../css/view.css" rel="stylesheet" />
-<<<<<<< HEAD
-=======
   <link href="../css/darkmode.css" rel="stylesheet" />
   <link href="../css/transitions.css" rel="stylesheet" />
->>>>>>> b5b2bf2 (Updated user folder files)
 </head>
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
     <div class="container">
-<<<<<<< HEAD
-      <a class="navbar-brand fw-bold" href="../index.html">
-        <i class="bi bi-camera-fill me-2"></i>Event Gallery
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="nav">
-=======
       <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="../index.html">
         <span class="brand-logo"><i class="bi bi-camera-fill"></i></span>
         Event Gallery
@@ -39,17 +24,13 @@
       </button>
       <div class="navbar-collapse" id="nav">
         <div class="nav-drawer-close"><button onclick="closeNav()">&times;</button></div>
->>>>>>> b5b2bf2 (Updated user folder files)
         <ul class="navbar-nav ms-auto gap-1">
           <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
-<<<<<<< HEAD
-=======
       <div class="nav-overlay" id="navOverlay" onclick="closeNav()"></div>
->>>>>>> b5b2bf2 (Updated user folder files)
     </div>
   </nav>
 
@@ -57,10 +38,6 @@
     <div class="row justify-content-center">
       <div class="col-12 col-lg-8">
 
-<<<<<<< HEAD
-        <div class="photo-frame mb-4">
-          <img id="mainPhoto" src="https://picsum.photos/seed/w1/1200/800" alt="Event Photo" onclick="toggleZoom(this)" title="Click to zoom" />
-=======
         <div class="photo-frame mb-4 position-relative" id="photoFrame">
           <img id="mainPhoto" src="https://picsum.photos/seed/w1/1200/800" alt="Event Photo" onclick="toggleZoom(this)" title="Click to zoom" />
           <div class="grain-overlay" id="grainOverlay"></div>
@@ -68,16 +45,10 @@
           <div id="magnifier"><img id="magImg" src="" alt="" /></div>
           <button onclick="loadPhoto(current-1)" class="btn btn-light btn-sm position-absolute top-50 start-0 translate-middle-y ms-2 rounded-circle shadow" style="width:40px;height:40px"><i class="bi bi-chevron-left"></i></button>
           <button onclick="loadPhoto(current+1)" class="btn btn-light btn-sm position-absolute top-50 end-0 translate-middle-y me-2 rounded-circle shadow" style="width:40px;height:40px"><i class="bi bi-chevron-right"></i></button>
->>>>>>> b5b2bf2 (Updated user folder files)
         </div>
 
         <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center flex-wrap">
           <a href="https://picsum.photos/seed/w1/1200/800" download="event-photo.jpg"
-<<<<<<< HEAD
-             class="btn btn-primary btn-lg rounded-3 px-4">
-            <i class="bi bi-download me-2"></i>Download
-          </a>
-=======
              class="btn btn-primary btn-lg rounded-3 px-4" id="downloadBtn">
             <i class="bi bi-download me-2"></i>Download
           </a>
@@ -95,7 +66,6 @@
           <button onclick="shareFacebook()" class="btn btn-primary btn-lg rounded-3 px-4" style="background:#1877f2;border-color:#1877f2">
             <i class="bi bi-facebook me-2"></i>Facebook
           </button>
->>>>>>> b5b2bf2 (Updated user folder files)
           <button onclick="copyLink()" class="btn btn-outline-secondary btn-lg rounded-3 px-4">
             <i class="bi bi-link-45deg me-2"></i>Copy Link
           </button>
@@ -126,9 +96,6 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
-<<<<<<< HEAD
-        <div class="col-md-4">
-=======
         <div class="col-md-2">
           <h6 class="fw-bold mb-3">Legal</h6>
           <ul class="list-unstyled small mb-0">
@@ -137,7 +104,6 @@
           </ul>
         </div>
         <div class="col-md-2">
->>>>>>> b5b2bf2 (Updated user folder files)
           <h6 class="fw-bold mb-3">Contact</h6>
           <ul class="list-unstyled small text-secondary mb-0">
             <li class="mb-1"><i class="bi bi-envelope-fill me-2"></i>hello@eventgallery.com</li>
@@ -162,12 +128,8 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<<<<<<< HEAD
-  <script>
-=======
   <button id="darkToggle" onclick="toggleDark()" title="Toggle dark mode"><i class="bi bi-moon-fill"></i></button>
   <script>
-    // Navbar drawer
     function openNav() { document.getElementById('nav').classList.add('show'); document.getElementById('navOverlay').classList.add('show'); document.body.style.overflow='hidden'; }
     function closeNav() { document.getElementById('nav').classList.remove('show'); document.getElementById('navOverlay').classList.remove('show'); document.body.style.overflow=''; }
     document.getElementById('navToggler').addEventListener('click', openNav);
@@ -188,7 +150,6 @@
       });
     });
 
->>>>>>> b5b2bf2 (Updated user folder files)
     const photos = [
       { src: 'https://picsum.photos/seed/w1/1200/800', label: 'Photo 1' },
       { src: 'https://picsum.photos/seed/w2/1200/800', label: 'Photo 2' },
@@ -199,11 +160,7 @@
       { src: 'https://picsum.photos/seed/w7/1200/800', label: 'Photo 7' },
       { src: 'https://picsum.photos/seed/w8/1200/800', label: 'Photo 8' },
     ];
-<<<<<<< HEAD
-    let current = 0;
-=======
     let current = +(new URLSearchParams(location.search).get('index') || 0);
->>>>>>> b5b2bf2 (Updated user folder files)
 
     const img   = document.getElementById('mainPhoto');
     const label = document.querySelector('.text-center.text-muted.small');
@@ -213,14 +170,6 @@
       img.classList.remove('zoomed');
       img.src = photos[current].src;
       label.innerHTML = photos[current].label + ' &mdash; Event: EVENT2025 &nbsp;|&nbsp; <kbd>&larr;</kbd> <kbd>&rarr;</kbd> to navigate';
-<<<<<<< HEAD
-      document.querySelector('[download]').href = photos[current].src;
-    }
-
-    function toggleZoom(el) {
-      el.classList.toggle('zoomed');
-    }
-=======
       document.getElementById('downloadBtn').href = photos[current].src;
     }
 
@@ -232,9 +181,7 @@
     }
 
     const qualitySizes = { full: '1200/800', web: '800/533', thumb: '400/267' };
-    let currentQuality = 'full';
     function setQuality(q) {
-      currentQuality = q;
       const size = qualitySizes[q];
       const seed = 'w' + (current + 1);
       document.getElementById('downloadBtn').href = 'https://picsum.photos/seed/' + seed + '/' + size;
@@ -243,7 +190,6 @@
     loadPhoto(current);
 
     function toggleZoom(el) { el.classList.toggle('zoomed'); }
->>>>>>> b5b2bf2 (Updated user folder files)
 
     function copyLink() {
       navigator.clipboard.writeText(window.location.href).then(() => {
@@ -252,16 +198,10 @@
       });
     }
 
-<<<<<<< HEAD
-    // Keyboard navigation
-=======
->>>>>>> b5b2bf2 (Updated user folder files)
     document.addEventListener('keydown', e => {
       if (e.key === 'ArrowLeft')  loadPhoto(current - 1);
       if (e.key === 'ArrowRight') loadPhoto(current + 1);
     });
-<<<<<<< HEAD
-=======
 
     let touchX = 0;
     img.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
@@ -270,20 +210,16 @@
       if (Math.abs(diff) > 50) diff > 0 ? loadPhoto(current + 1) : loadPhoto(current - 1);
     });
 
-    // Film grain toggle
     function toggleGrain() {
-      const overlay = document.getElementById('grainOverlay');
-      const btn = document.getElementById('grainBtn');
-      overlay.classList.toggle('active');
-      btn.classList.toggle('active');
+      document.getElementById('grainOverlay').classList.toggle('active');
+      document.getElementById('grainBtn').classList.toggle('active');
     }
 
-    // Lens magnifier
-    const frame   = document.getElementById('photoFrame');
+    const frame    = document.getElementById('photoFrame');
     const magnifier = document.getElementById('magnifier');
-    const magImg  = document.getElementById('magImg');
-    const ZOOM    = 2.5;
-    const MAG_R   = 80; // radius
+    const magImg   = document.getElementById('magImg');
+    const ZOOM     = 2.5;
+    const MAG_R    = 80;
 
     frame.addEventListener('mouseenter', () => {
       if (img.classList.contains('zoomed')) return;
@@ -300,7 +236,6 @@
       const my = e.clientY - r.top;
       magnifier.style.left = (mx - MAG_R) + 'px';
       magnifier.style.top  = (my - MAG_R) + 'px';
-      // Position the zoomed image inside magnifier
       const px = (e.clientX - ir.left) / ir.width;
       const py = (e.clientY - ir.top)  / ir.height;
       const zw = ir.width  * ZOOM;
@@ -310,7 +245,6 @@
       magImg.style.left   = (MAG_R - px * zw) + 'px';
       magImg.style.top    = (MAG_R - py * zh) + 'px';
     });
->>>>>>> b5b2bf2 (Updated user folder files)
   </script>
 </body>
 </html>
