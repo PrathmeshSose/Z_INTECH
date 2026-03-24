@@ -28,6 +28,7 @@
         <ul class="navbar-nav ms-auto gap-1 align-items-lg-center">
           <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="pages/about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/events.html">Events</a></li>
           <li class="nav-item"><a class="nav-link" href="pages/contact.html">Contact</a></li>
           <li class="nav-item ms-lg-2">
             <a href="pages/access.html" class="btn btn-accent btn-sm rounded-pill px-4">
@@ -66,9 +67,33 @@
   </div>
 
   <!-- ═══════════════════════════════════════════
+       VOYAGE SLIDER
+  ═══════════════════════════════════════════ -->
+  <section class="voyage-section">
+    <div class="voyage-bg-layer" id="voyageBgLayer"></div>
+    <div class="voyage-header">
+      <div class="section-label">Featured Events</div>
+      <h2 class="section-title">Moments We've Captured</h2>
+    </div>
+    <div class="voyage-stage" id="voyageStage">
+      <button class="voyage-btn" id="voyagePrev">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <div class="voyage-cards" id="voyageCards">
+        <!-- cards injected by JS -->
+      </div>
+      <button class="voyage-btn" id="voyageNext">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+    <div class="voyage-info" id="voyageInfo"></div>
+    <div class="voyage-dots" id="voyageDots"></div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
        ANTIGRAVITY BANNER
   ═══════════════════════════════════════════ -->
-  <section class="antigrav-banner" id="antigravBanner">
+  <!-- <section class="antigrav-banner" id="antigravBanner">
     <canvas id="antigravCanvas"></canvas>
     <div class="antigrav-content">
       <div class="antigrav-label">Zero Gravity Experience</div>
@@ -78,7 +103,7 @@
         <i class="bi bi-key-fill me-2"></i>Access My Event
       </a>
     </div>
-  </section>
+  </section> -->
 
   <!-- ═══════════════════════════════════════════
        FEATURES
@@ -88,42 +113,42 @@
       <div class="section-label text-center reveal">Powerful Features</div>
       <h2 class="section-title text-center reveal">Everything you need for event photos</h2>
       <div class="row g-4 mt-2">
-        <div class="col-md-4 reveal">
+        <div class="col-sm-6 col-md-4 reveal">
           <div class="feature-card-new h-100">
             <div class="fc-icon bg-blue"><i class="bi bi-shield-lock-fill"></i></div>
             <h5 class="fw-semibold mt-3">Private Access</h5>
             <p class="text-muted small mb-0">Only guests with the event code can view photos. Your memories stay yours.</p>
           </div>
         </div>
-        <div class="col-md-4 reveal">
+        <div class="col-sm-6 col-md-4 reveal">
           <div class="feature-card-new h-100">
             <div class="fc-icon bg-purple"><i class="bi bi-grid-fill"></i></div>
             <h5 class="fw-semibold mt-3">Beautiful Gallery</h5>
             <p class="text-muted small mb-0">Browse all event photos in a clean, responsive masonry grid — desktop or mobile.</p>
           </div>
         </div>
-        <div class="col-md-4 reveal">
+        <div class="col-sm-6 col-md-4 reveal">
           <div class="feature-card-new h-100">
             <div class="fc-icon bg-green"><i class="bi bi-download"></i></div>
             <h5 class="fw-semibold mt-3">Easy Download</h5>
             <p class="text-muted small mb-0">Download any photo directly to your device in full resolution, instantly.</p>
           </div>
         </div>
-        <div class="col-md-4 reveal">
+        <div class="col-sm-6 col-md-4 reveal">
           <div class="feature-card-new h-100">
             <div class="fc-icon bg-orange"><i class="bi bi-share-fill"></i></div>
             <h5 class="fw-semibold mt-3">Instant Sharing</h5>
             <p class="text-muted small mb-0">Share your gallery link with guests in seconds — no app required.</p>
           </div>
         </div>
-        <div class="col-md-4 reveal">
+        <div class="col-sm-6 col-md-4 reveal">
           <div class="feature-card-new h-100">
             <div class="fc-icon bg-pink"><i class="bi bi-phone-fill"></i></div>
             <h5 class="fw-semibold mt-3">Mobile Friendly</h5>
             <p class="text-muted small mb-0">Fully responsive on every device — phones, tablets, and desktops.</p>
           </div>
         </div>
-        <div class="col-md-4 reveal">
+        <div class="col-sm-6 col-md-4 reveal">
           <div class="feature-card-new h-100">
             <div class="fc-icon bg-teal"><i class="bi bi-lightning-charge-fill"></i></div>
             <h5 class="fw-semibold mt-3">Lightning Fast</h5>
@@ -142,7 +167,7 @@
       <div class="section-label text-center reveal">Simple Process</div>
       <h2 class="section-title text-center reveal">Get your photos in 3 easy steps</h2>
       <div class="row g-4 mt-3 justify-content-center">
-        <div class="col-md-4 reveal">
+        <div class="col-sm-6 col-md-4 reveal">
           <div class="step-card text-center">
             <div class="step-num">01</div>
             <div class="step-icon"><i class="bi bi-key-fill"></i></div>
@@ -150,7 +175,7 @@
             <p class="text-muted small mb-0">Your photographer or event organiser gives you a unique code.</p>
           </div>
         </div>
-        <div class="col-md-4 reveal">
+        <div class="col-sm-6 col-md-4 reveal">
           <div class="step-card text-center">
             <div class="step-num">02</div>
             <div class="step-icon"><i class="bi bi-images"></i></div>
@@ -158,7 +183,7 @@
             <p class="text-muted small mb-0">Instantly see all photos from your event in a beautiful grid.</p>
           </div>
         </div>
-        <div class="col-md-4 reveal">
+        <div class="col-sm-6 col-md-4 reveal">
           <div class="step-card text-center">
             <div class="step-num">03</div>
             <div class="step-icon"><i class="bi bi-cloud-arrow-down-fill"></i></div>
@@ -204,7 +229,7 @@
       <div class="section-label text-center reveal">Testimonials</div>
       <h2 class="section-title text-center reveal">Loved by guests &amp; photographers</h2>
       <div class="row g-4 mt-2">
-        <div class="col-md-4 reveal">
+        <div class="col-md-4 col-sm-6 reveal">
           <div class="testi-card">
             <div class="stars mb-2">★★★★★</div>
             <p class="small mb-3">"We used Event Gallery for our wedding and every guest could access photos within minutes. Absolutely seamless!"</p>
@@ -214,7 +239,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 reveal">
+        <div class="col-md-4 col-sm-6 reveal">
           <div class="testi-card">
             <div class="stars mb-2">★★★★★</div>
             <p class="small mb-3">"As a photographer, this platform saves me hours. I upload once and all clients get instant access. Love it."</p>
@@ -224,7 +249,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 reveal">
+        <div class="col-md-4 col-sm-6 reveal">
           <div class="testi-card">
             <div class="stars mb-2">★★★★★</div>
             <p class="small mb-3">"Our corporate event photos were shared with 300 employees in seconds. The private code feature is brilliant."</p>
@@ -262,7 +287,7 @@
           <h6 class="fw-bold mb-3"><i class="bi bi-camera-fill me-2"></i>Event Gallery</h6>
           <p class="small text-secondary mb-0">A simple, private photo sharing platform for every kind of event.</p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-6">
           <h6 class="fw-bold mb-3">Quick Links</h6>
           <ul class="list-unstyled small mb-0">
             <li class="mb-1"><a href="index.html">Home</a></li>
@@ -271,14 +296,14 @@
             <li><a href="pages/contact.html">Contact</a></li>
           </ul>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 col-6">
           <h6 class="fw-bold mb-3">Legal</h6>
           <ul class="list-unstyled small mb-0">
             <li class="mb-1"><a href="privacy.html">Privacy Policy</a></li>
             <li><a href="terms.html">Terms of Service</a></li>
           </ul>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 col-6">
           <h6 class="fw-bold mb-3">Contact</h6>
           <ul class="list-unstyled small text-secondary mb-0">
             <li class="mb-1"><i class="bi bi-envelope-fill me-2"></i>hello@eventgallery.com</li>
@@ -358,6 +383,84 @@
       });
     }, { threshold: 0.5 });
     document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+
+    // ── VOYAGE SLIDER ────────────────────────────
+    (function(){
+      const SLIDES = [
+        { img:'https://images.unsplash.com/photo-1519741497674-611481863552?w=900&q=80', title:'Wedding',    sub:'New York, 2025',    desc:'Timeless moments, beautifully captured' },
+        { img:'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=900&q=80', title:'Birthday',   sub:'Los Angeles, 2025', desc:'Fun, colourful and full of joy' },
+        { img:'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&q=80', title:'Corporate',  sub:'Chicago, 2025',     desc:'Conferences, launches and team moments' },
+        { img:'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=900&q=80', title:'Graduation', sub:'Boston, 2025',      desc:'Proud milestones, forever remembered' },
+        { img:'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=900&q=80', title:'Concert',    sub:'Miami, 2025',       desc:'Energy, music and unforgettable nights' },
+        { img:'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=900&q=80', title:'Party',      sub:'Los Angeles, 2025', desc:'Every laugh, dance and cheer captured' },
+      ];
+      const N = SLIDES.length;
+      let cur = 0, autoTimer;
+
+      const cardsEl = document.getElementById('voyageCards');
+      const infoEl  = document.getElementById('voyageInfo');
+      const dotsEl  = document.getElementById('voyageDots');
+      const bgEl    = document.getElementById('voyageBgLayer');
+
+      // Build cards & dots
+      SLIDES.forEach((s, i) => {
+        const card = document.createElement('div');
+        card.className = 'vcard';
+        card.innerHTML = `<img src="${s.img}" alt="${s.title}"/>`;
+        cardsEl.appendChild(card);
+
+        const dot = document.createElement('button');
+        dot.className = 'vdot';
+        dot.addEventListener('click', () => goTo(i));
+        dotsEl.appendChild(dot);
+      });
+
+      function goTo(n) {
+        cur = (n + N) % N;
+        const s = SLIDES[cur];
+        bgEl.style.backgroundImage = `url(${s.img})`;
+
+        // Responsive spacing based on screen width
+        const w = window.innerWidth;
+        const spacing = w <= 575 ? 140 : w <= 767 ? 180 : 240;
+        const rotateY = w <= 575 ? -22 : w <= 767 ? -25 : -28;
+
+        cardsEl.querySelectorAll('.vcard').forEach((c, i) => {
+          const raw = ((i - cur + N) % N);
+          const pos = raw <= Math.floor(N / 2) ? raw : raw - N;
+          const abs = Math.abs(pos);
+          c.style.cssText = [
+            `transform:translateX(${pos * spacing}px) rotateY(${pos * rotateY}deg) scale(${1 - abs * 0.1})`,
+            `opacity:${abs > 2 ? 0 : 1 - abs * 0.25}`,
+            `z-index:${20 - abs * 4}`,
+            `filter:brightness(${1 - abs * 0.28})`,
+            `transition:transform .6s ease,opacity .6s ease,filter .6s ease`
+          ].join(';');
+        });
+
+        infoEl.innerHTML = `<div class="vinfo-title">${s.title}</div><div class="vinfo-sub">${s.sub}</div><div class="vinfo-desc">${s.desc}</div>`;
+        infoEl.classList.remove('vinfo--in');
+        void infoEl.offsetWidth;
+        infoEl.classList.add('vinfo--in');
+
+        dotsEl.querySelectorAll('.vdot').forEach((d, i) => d.classList.toggle('vdot--active', i === cur));
+
+        clearInterval(autoTimer);
+        autoTimer = setInterval(() => goTo(cur + 1), 3500);
+      }
+
+      document.getElementById('voyagePrev').addEventListener('click', () => goTo(cur - 1));
+      document.getElementById('voyageNext').addEventListener('click', () => goTo(cur + 1));
+
+      // Recalculate on resize
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => goTo(cur), 150);
+      });
+
+      goTo(0);
+    })();
 
     // ── ANTIGRAVITY BANNER ──────────────────────
     (function() {

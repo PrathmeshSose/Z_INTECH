@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Browse our events showcase — weddings, birthdays, corporate events, graduations, concerts and parties captured beautifully." />
+  <title>Events – Event Gallery</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="../css/gallery.css" rel="stylesheet" />
+  <link href="../css/darkmode.css" rel="stylesheet" />
+  <link href="../css/transitions.css" rel="stylesheet" />
+  <style>
+    /* ── Page hero ── */
+    .page-hero {
+      background: linear-gradient(135deg, #0f3460 0%, #0a0e1a 100%);
+      padding: 4rem 0 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1400&q=60') center/cover no-repeat;
+      opacity: .12;
+      pointer-events: none;
+    }
+    .page-hero .container { position: relative; z-index: 1; }
+    .page-hero h1 { color: #fff; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; }
+    .page-hero h1::after {
+      content: '';
+      display: block;
+      width: 56px; height: 4px;
+      background: #e94560;
+      border-radius: 2px;
+      margin-top: .5rem;
+    }
+    .page-hero p { color: rgba(255,255,255,.7); max-width: 520px; }
+
+    /* ── Filter tabs ── */
+    .filter-tabs { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2rem; }
+    .filter-tab {
+      padding: .35rem 1.1rem;
+      border-radius: 2rem;
+      border: 2px solid #dee2e6;
+      background: transparent;
+      font-size: .85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s;
+      color: inherit;
+    }
+    .filter-tab:hover { border-color: #e94560; color: #e94560; }
+    .filter-tab.active { background: #e94560; border-color: #e94560; color: #fff; }
+
+    /* ── Event cards ── */
+    .event-card {
+      border-radius: 1rem;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
+      transition: transform .2s, box-shadow .2s;
+      background: #fff;
+    }
+    .event-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,.14); }
+    .event-card img { width: 100%; height: 220px; object-fit: cover; display: block; transition: transform .35s; }
+    .event-card:hover img { transform: scale(1.05); }
+    .event-card .card-body { padding: 1rem 1.1rem .9rem; }
+    .event-card .ev-tag {
+      display: inline-block;
+      font-size: .72rem;
+      font-weight: 700;
+      padding: .2rem .65rem;
+      border-radius: 2rem;
+      margin-bottom: .45rem;
+      letter-spacing: .03em;
+    }
+    .event-card h6 { font-weight: 700; margin-bottom: .2rem; font-size: .95rem; }
+    .event-card .ev-meta { font-size: .78rem; color: #6c757d; }
+    .event-card .ev-overlay {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,.55);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity .2s;
+    }
+    .event-card:hover .ev-overlay { opacity: 1; }
+
+    /* tag colours */
+    .tag-wedding    { background: #fce4ec; color: #c2185b; }
+    .tag-birthday   { background: #fff8e1; color: #f57f17; }
+    .tag-corporate  { background: #e3f2fd; color: #1565c0; }
+    .tag-graduation { background: #e8f5e9; color: #2e7d32; }
+    .tag-concert    { background: #f3e5f5; color: #6a1b9a; }
+    .tag-party      { background: #fbe9e7; color: #bf360c; }
+
+    /* dark mode cards */
+    body.dark .event-card { background: #1a1f2e; }
+    body.dark .filter-tab { border-color: #2a3050; color: #adb5bd; }
+    body.dark .filter-tab:hover { border-color: #e94560; color: #e94560; }
+
+    /* ── Lightbox ── */
+    #evLightbox {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,.93); z-index: 9999;
+      align-items: center; justify-content: center; flex-direction: column;
+    }
+    #evLightbox.active { display: flex; }
+    #evLightbox img { max-width: 90vw; max-height: 80vh; border-radius: .75rem; object-fit: contain; }
+    #evLightbox .lb-close { position: absolute; top: 1rem; right: 1.25rem; font-size: 2rem; color: #fff; cursor: pointer; line-height: 1; background: none; border: none; }
+    #evLightbox .lb-info { color: #adb5bd; font-size: .85rem; margin-top: .75rem; }
+    #evLightbox .lb-prev, #evLightbox .lb-next {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      color: #fff; cursor: pointer; background: rgba(255,255,255,.1);
+      border: none; border-radius: 50%; width: 48px; height: 48px;
+      display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+      transition: background .2s;
+    }
+    #evLightbox .lb-prev:hover, #evLightbox .lb-next:hover { background: rgba(255,255,255,.25); }
+    #evLightbox .lb-prev { left: 1rem; }
+    #evLightbox .lb-next { right: 1rem; }
+
+    /* ── CTA strip ── */
+    .events-cta {
+      background: linear-gradient(135deg, #e94560, #c0392b);
+      border-radius: 1.25rem;
+      padding: 2.5rem 2rem;
+      color: #fff;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="../index.html">
+        <span class="brand-logo"><i class="bi bi-camera-fill"></i></span>
+        Event Gallery
+      </a>
+      <button class="navbar-toggler border-0" type="button" id="navToggler">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse" id="nav">
+        <div class="nav-drawer-close"><button onclick="closeNav()">&times;</button></div>
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-2">
+            <a href="access.html" class="btn btn-accent btn-sm rounded-pill px-4">
+              <i class="bi bi-key-fill me-1"></i>Access Event
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-overlay" id="navOverlay" onclick="closeNav()"></div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="page-hero">
+    <div class="container">
+      <h1>Events Showcase</h1>
+      <p class="mt-2 mb-0">A curated look at the moments we've captured — from intimate weddings to grand corporate galas.</p>
+    </div>
+  </div>
+
+  <div class="container py-5">
+
+    <!-- Filter tabs -->
+    <div class="filter-tabs" id="filterTabs">
+      <button class="filter-tab active" data-cat="all">All Events</button>
+      <button class="filter-tab" data-cat="wedding">💍 Wedding</button>
+      <button class="filter-tab" data-cat="birthday">🎂 Birthday</button>
+      <button class="filter-tab" data-cat="corporate">💼 Corporate</button>
+      <button class="filter-tab" data-cat="graduation">🎓 Graduation</button>
+      <button class="filter-tab" data-cat="concert">🎤 Concert</button>
+      <button class="filter-tab" data-cat="party">🥳 Party</button>
+    </div>
+
+    <!-- Grid -->
+    <div class="row g-4" id="eventsGrid"></div>
+
+    <!-- No results -->
+    <div id="noResults" class="text-center py-5" style="display:none">
+      <i class="bi bi-search display-4 text-muted"></i>
+      <p class="text-muted mt-3">No events in this category yet.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="events-cta mt-5">
+      <i class="bi bi-key-fill fs-2 mb-3 d-block"></i>
+      <h4 class="fw-bold mb-2">Have an event code?</h4>
+      <p class="opacity-75 mb-3">Enter your private code to access your personal event gallery.</p>
+      <a href="access.html" class="btn btn-light btn-lg rounded-pill px-5 fw-semibold">
+        <i class="bi bi-key-fill me-2"></i>Access My Event
+      </a>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="evLightbox">
+    <button class="lb-close" onclick="closeLb()">&times;</button>
+    <button class="lb-prev" onclick="lbNav(-1)"><i class="bi bi-chevron-left"></i></button>
+    <img id="lbImg" src="" alt="Event photo" />
+    <div class="lb-info" id="lbInfo"></div>
+    <button class="lb-next" onclick="lbNav(1)"><i class="bi bi-chevron-right"></i></button>
+  </div>
+
+  <footer class="py-5 text-white">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h6 class="fw-bold mb-3"><i class="bi bi-camera-fill me-2"></i>Event Gallery</h6>
+          <p class="small text-secondary mb-0">A simple, private photo sharing platform for every kind of event.</p>
+        </div>
+        <div class="col-md-4">
+          <h6 class="fw-bold mb-3">Quick Links</h6>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-1"><a href="../index.html">Home</a></li>
+            <li class="mb-1"><a href="access.html">Access Event</a></li>
+            <li class="mb-1"><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h6 class="fw-bold mb-3">Legal</h6>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-1"><a href="../privacy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h6 class="fw-bold mb-3">Contact</h6>
+          <ul class="list-unstyled small text-secondary mb-0">
+            <li class="mb-1"><i class="bi bi-envelope-fill me-2"></i>hello@eventgallery.com</li>
+            <li class="mb-1"><i class="bi bi-telephone-fill me-2"></i>+1 (555) 000-0000</li>
+            <li><i class="bi bi-geo-alt-fill me-2"></i>New York, USA</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-secondary mt-4" />
+      <p class="text-center text-secondary small mb-0">&copy; 2025 Event Gallery &mdash; All rights reserved</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <button id="darkToggle" onclick="toggleDark()" title="Toggle dark mode"><i class="bi bi-moon-fill"></i></button>
+  <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top" style="position:fixed;bottom:1.25rem;right:1.25rem;z-index:998;width:44px;height:44px;border-radius:50%;border:none;background:#0f3460;color:#fff;font-size:1.1rem;display:none;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.3);cursor:pointer"><i class="bi bi-arrow-up"></i></button>
+
+  <script>
+    // Drawer
+    function openNav()  { document.getElementById('nav').classList.add('show'); document.getElementById('navOverlay').classList.add('show'); document.body.style.overflow='hidden'; }
+    function closeNav() { document.getElementById('nav').classList.remove('show'); document.getElementById('navOverlay').classList.remove('show'); document.body.style.overflow=''; }
+    document.getElementById('navToggler').addEventListener('click', openNav);
+
+    // Dark mode
+    function toggleDark() {
+      document.body.classList.toggle('dark');
+      const on = document.body.classList.contains('dark');
+      localStorage.setItem('dark', on);
+      document.getElementById('darkToggle').innerHTML = on ? '<i class="bi bi-sun-fill"></i>' : '<i class="bi bi-moon-fill"></i>';
+    }
+    if (localStorage.getItem('dark') === 'true') {
+      document.body.classList.add('dark');
+      document.addEventListener('DOMContentLoaded', () => { document.getElementById('darkToggle').innerHTML = '<i class="bi bi-sun-fill"></i>'; });
+    }
+
+    // Page transition
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('mailto') || a.target) return;
+        a.addEventListener('click', e => { e.preventDefault(); document.body.classList.add('page-leave'); setTimeout(() => window.location = href, 280); });
+      });
+    });
+
+    // Back to top
+    window.addEventListener('scroll', () => {
+      document.getElementById('backToTop').style.display = window.scrollY > 300 ? 'flex' : 'none';
+    });
+
+    // ── Events data ──────────────────────────────
+    const events = [
+      { cat: 'wedding',    title: 'Sarah & Tom Wedding',       date: 'Mar 2025', location: 'New York',    photos: 142, img: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80',  tag: 'tag-wedding',    label: '💍 Wedding'    },
+      { cat: 'birthday',   title: 'Emma\'s 30th Birthday',     date: 'Apr 2025', location: 'Los Angeles', photos: 87,  img: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80',  tag: 'tag-birthday',   label: '🎂 Birthday'   },
+      { cat: 'corporate',  title: 'TechConf 2025 Summit',      date: 'Feb 2025', location: 'San Francisco',photos: 210, img: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80', tag: 'tag-corporate',  label: '💼 Corporate'  },
+      { cat: 'graduation', title: 'Class of 2025 Graduation',  date: 'May 2025', location: 'Boston',      photos: 165, img: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80',  tag: 'tag-graduation', label: '🎓 Graduation' },
+      { cat: 'concert',    title: 'Summer Beats Live',         date: 'Jun 2025', location: 'Chicago',     photos: 98,  img: 'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800&q=80',  tag: 'tag-concert',    label: '🎤 Concert'    },
+      { cat: 'party',      title: 'New Year\'s Eve Gala',      date: 'Jan 2025', location: 'Miami',       photos: 73,  img: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80',  tag: 'tag-party',      label: '🥳 Party'      },
+      { cat: 'wedding',    title: 'Priya & Arjun Wedding',     date: 'Apr 2025', location: 'Dubai',       photos: 189, img: 'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=800&q=80',  tag: 'tag-wedding',    label: '💍 Wedding'    },
+      { cat: 'corporate',  title: 'Annual Awards Night',       date: 'Mar 2025', location: 'London',      photos: 134, img: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&q=80',  tag: 'tag-corporate',  label: '💼 Corporate'  },
+      { cat: 'birthday',   title: 'Kids\' Superhero Party',    date: 'May 2025', location: 'Austin',      photos: 61,  img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',  tag: 'tag-birthday',   label: '🎂 Birthday'   },
+      { cat: 'concert',    title: 'Jazz Under the Stars',      date: 'Jun 2025', location: 'New Orleans', photos: 55,  img: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80',  tag: 'tag-concert',    label: '🎤 Concert'    },
+      { cat: 'graduation', title: 'MBA Graduation Ceremony',   date: 'Jun 2025', location: 'Toronto',     photos: 112, img: 'https://images.unsplash.com/photo-1627556704302-624286467c65?w=800&q=80',  tag: 'tag-graduation', label: '🎓 Graduation' },
+      { cat: 'party',      title: 'Rooftop Summer Party',      date: 'Jul 2025', location: 'Sydney',      photos: 80,  img: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80',  tag: 'tag-party',      label: '🥳 Party'      },
+    ];
+
+    let activeCat = 'all';
+    let lbIndex = 0;
+    let visibleEvents = [];
+
+    function buildGrid() {
+      const grid = document.getElementById('eventsGrid');
+      grid.innerHTML = '';
+      visibleEvents = activeCat === 'all' ? events : events.filter(e => e.cat === activeCat);
+
+      document.getElementById('noResults').style.display = visibleEvents.length === 0 ? 'block' : 'none';
+
+      visibleEvents.forEach((ev, i) => {
+        const col = document.createElement('div');
+        col.className = 'col-sm-6 col-lg-4';
+        col.innerHTML = `
+          <div class="event-card" onclick="openLb(${i})">
+            <div style="overflow:hidden">
+              <img src="${ev.img}" alt="${ev.title}" loading="lazy" />
+            </div>
+            <div class="ev-overlay">
+              <button class="btn btn-light rounded-pill px-4 fw-semibold" style="font-size:.85rem">
+                <i class="bi bi-eye me-1"></i>View Photos
+              </button>
+            </div>
+            <div class="card-body">
+              <span class="ev-tag ${ev.tag}">${ev.label}</span>
+              <h6>${ev.title}</h6>
+              <div class="ev-meta d-flex gap-3">
+                <span><i class="bi bi-calendar3 me-1"></i>${ev.date}</span>
+                <span><i class="bi bi-geo-alt me-1"></i>${ev.location}</span>
+                <span><i class="bi bi-images me-1"></i>${ev.photos} photos</span>
+              </div>
+            </div>
+          </div>`;
+        grid.appendChild(col);
+      });
+    }
+
+    // Filter tabs
+    document.getElementById('filterTabs').addEventListener('click', e => {
+      const btn = e.target.closest('.filter-tab');
+      if (!btn) return;
+      document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCat = btn.dataset.cat;
+      buildGrid();
+    });
+
+    buildGrid();
+
+    // Lightbox
+    const lb = document.getElementById('evLightbox');
+    function openLb(i) {
+      lbIndex = i;
+      showLb();
+      lb.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function showLb() {
+      const ev = visibleEvents[lbIndex];
+      document.getElementById('lbImg').src = ev.img;
+      document.getElementById('lbInfo').textContent = ev.title + '  —  ' + ev.location + '  |  ' + ev.date;
+    }
+    function closeLb() { lb.classList.remove('active'); document.body.style.overflow = ''; }
+    function lbNav(dir) { lbIndex = (lbIndex + dir + visibleEvents.length) % visibleEvents.length; showLb(); }
+    lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+    document.addEventListener('keydown', e => {
+      if (!lb.classList.contains('active')) return;
+      if (e.key === 'ArrowLeft')  lbNav(-1);
+      if (e.key === 'ArrowRight') lbNav(1);
+      if (e.key === 'Escape')     closeLb();
+    });
+  </script>
+</body>
+</html>
