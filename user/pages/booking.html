@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing & Booking – Event Gallery</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="../css/booking.css" rel="stylesheet" />
+  <link href="../css/darkmode.css" rel="stylesheet" />
+  <link href="../css/transitions.css" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="../index.html">
+        <span class="brand-logo"><i class="bi bi-camera-fill"></i></span>
+        Event Gallery
+      </a>
+      <button class="navbar-toggler border-0" type="button" id="navToggler">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse" id="nav">
+        <div class="nav-drawer-close"><button onclick="closeNav()">&times;</button></div>
+        <ul class="navbar-nav ms-auto gap-1 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link active" href="booking.html">Booking</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-2">
+            <a href="access.html" class="btn btn-accent btn-sm rounded-pill px-4">
+              <i class="bi bi-key-fill me-1"></i>Access Event
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-overlay" id="navOverlay" onclick="closeNav()"></div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <i class="bi bi-calendar-check-fill display-4 mb-3 d-block"></i>
+      <h1>Pricing & Booking</h1>
+      <p>Choose your plan, pick an available date, and confirm your booking in minutes.</p>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing-section" id="pricingSection">
+    <div class="container">
+      <div class="section-label text-center">Pricing Plans</div>
+      <h2 class="section-title text-center mb-2">Simple, transparent pricing</h2>
+      <p class="text-center text-muted mb-5">No hidden fees. Pick the plan that fits your event.</p>
+      <div class="row g-4 justify-content-center">
+
+        <!-- Starter -->
+        <div class="col-md-4 col-sm-10">
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <div class="pricing-icon bg-blue mx-auto"><i class="bi bi-camera"></i></div>
+              <h5 class="pricing-plan mt-2">Starter</h5>
+              <div class="pricing-price">$9<span>/event</span></div>
+              <p class="pricing-sub">Perfect for small gatherings</p>
+            </div>
+            <ul class="pricing-features">
+              <li><i class="bi bi-check-circle-fill text-success"></i> Up to 100 photos</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Private event code</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Guest download access</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> 30-day gallery access</li>
+              <li class="disabled"><i class="bi bi-x-circle-fill"></i> Custom branding</li>
+              <li class="disabled"><i class="bi bi-x-circle-fill"></i> Priority support</li>
+            </ul>
+            <button onclick="selectPlan('Starter','$9/event')" class="btn btn-outline-primary w-100 rounded-pill mt-auto">Book This Plan</button>
+          </div>
+        </div>
+
+        <!-- Pro -->
+        <div class="col-md-4 col-sm-10">
+          <div class="pricing-card pricing-card--popular">
+            <div class="pricing-badge">Most Popular</div>
+            <div class="pricing-header">
+              <div class="pricing-icon bg-pink mx-auto"><i class="bi bi-stars"></i></div>
+              <h5 class="pricing-plan mt-2">Pro</h5>
+              <div class="pricing-price">$29<span>/event</span></div>
+              <p class="pricing-sub">Best for weddings & corporate</p>
+            </div>
+            <ul class="pricing-features">
+              <li><i class="bi bi-check-circle-fill text-success"></i> Up to 500 photos</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Private event code</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Guest download access</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> 90-day gallery access</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Custom branding</li>
+              <li class="disabled"><i class="bi bi-x-circle-fill"></i> Priority support</li>
+            </ul>
+            <button onclick="selectPlan('Pro','$29/event')" class="btn btn-accent w-100 rounded-pill mt-auto">Book This Plan</button>
+          </div>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="col-md-4 col-sm-10">
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <div class="pricing-icon bg-purple mx-auto"><i class="bi bi-building"></i></div>
+              <h5 class="pricing-plan mt-2">Enterprise</h5>
+              <div class="pricing-price">$79<span>/event</span></div>
+              <p class="pricing-sub">For large-scale events</p>
+            </div>
+            <ul class="pricing-features">
+              <li><i class="bi bi-check-circle-fill text-success"></i> Unlimited photos</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Private event code</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Guest download access</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> 1-year gallery access</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Custom branding</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Priority support</li>
+            </ul>
+            <button onclick="selectPlan('Enterprise','$79/event')" class="btn btn-outline-primary w-100 rounded-pill mt-auto">Book This Plan</button>
+          </div>
+        </div>
+
+        <!-- Custom -->
+        <div class="col-md-8 col-sm-10">
+          <div class="pricing-card pricing-card--custom">
+            <div class="pricing-badge pricing-badge--custom">Fully Customizable</div>
+            <div class="row align-items-center g-4">
+              <div class="col-md-5 text-center text-md-start">
+                <div class="pricing-icon bg-teal mb-3"><i class="bi bi-sliders"></i></div>
+                <h5 class="pricing-plan">Custom Plan</h5>
+                <div class="pricing-price">Let's Talk<span class="d-block" style="font-size:.82rem;margin-top:.3rem">Tailored to your needs</span></div>
+                <p class="pricing-sub mt-2">Build exactly what your event requires — no limits.</p>
+                <button onclick="selectPlan('Custom','Contact Us')" class="btn btn-accent rounded-pill px-4 mt-3">
+                  <i class="bi bi-calendar-check me-2"></i>Book This Plan
+                </button>
+              </div>
+              <div class="col-md-7">
+                <ul class="pricing-features mb-0">
+                  <li><i class="bi bi-check-circle-fill text-success"></i> Custom photo storage limit</li>
+                  <li><i class="bi bi-check-circle-fill text-success"></i> Custom gallery access duration</li>
+                  <li><i class="bi bi-check-circle-fill text-success"></i> Custom domain & branding</li>
+                  <li><i class="bi bi-check-circle-fill text-success"></i> Custom event code & password</li>
+                  <li><i class="bi bi-check-circle-fill text-success"></i> Dedicated account manager</li>
+                  <li><i class="bi bi-check-circle-fill text-success"></i> 24/7 priority support</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking -->
+  <section class="booking-section" id="bookingSection">
+    <div class="container">
+      <div class="section-label text-center">Book Your Date</div>
+      <h2 class="section-title text-center mb-2">Choose a date & confirm your booking</h2>
+      <p class="text-center text-muted mb-5">Select your plan above, pick an available date, then fill in your details.</p>
+
+      <div class="row g-4 align-items-start">
+
+        <!-- Left: Plan summary + Calendar -->
+        <div class="col-lg-7">
+          <div class="booking-plan-summary">
+            <div class="bps-icon"><i class="bi bi-calendar-check-fill"></i></div>
+            <div class="bps-info">
+              <div class="bps-label">Selected Plan</div>
+              <div class="bps-name" id="bpsName">No plan selected</div>
+              <div class="bps-price" id="bpsPrice">&mdash;</div>
+            </div>
+            <button class="bps-change" onclick="document.getElementById('pricingSection').scrollIntoView({behavior:'smooth'})">
+              <i class="bi bi-arrow-up-circle me-1"></i>Change Plan
+            </button>
+          </div>
+
+          <div class="booking-calendar">
+            <div class="cal-header">
+              <button class="cal-nav" id="calPrev"><i class="bi bi-chevron-left"></i></button>
+              <span class="cal-month" id="calMonth"></span>
+              <button class="cal-nav" id="calNext"><i class="bi bi-chevron-right"></i></button>
+            </div>
+            <div class="cal-weekdays">
+              <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+            </div>
+            <div class="cal-grid" id="calGrid"></div>
+            <div class="cal-legend">
+              <span><span class="cal-dot dot-available"></span> Available</span>
+              <span><span class="cal-dot dot-booked"></span> Booked</span>
+              <span><span class="cal-dot dot-past"></span> Past</span>
+              <span><span class="cal-dot dot-selected"></span> Selected</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="col-lg-5">
+          <div class="booking-form-card">
+            <h6 class="fw-bold mb-4"><i class="bi bi-person-fill me-2 text-danger"></i>Your Details</h6>
+            <form id="bookingForm" novalidate>
+              <div class="row g-3">
+                <div class="col-12">
+                  <div class="bk-field">
+                    <label>Full Name <span class="text-danger">*</span></label>
+                    <input type="text" id="bkName" placeholder="e.g. Sarah Johnson" />
+                    <div class="bk-error" id="errName">Please enter your full name.</div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="bk-field">
+                    <label>Email <span class="text-danger">*</span></label>
+                    <input type="email" id="bkEmail" placeholder="you@email.com" />
+                    <div class="bk-error" id="errEmail">Enter a valid email.</div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="bk-field">
+                    <label>Phone <span class="text-danger">*</span></label>
+                    <input type="tel" id="bkPhone" placeholder="+1 555 000 0000" />
+                    <div class="bk-error" id="errPhone">Enter a valid phone number.</div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="bk-field">
+                    <label>Event Type <span class="text-danger">*</span></label>
+                    <select id="bkType">
+                      <option value="">Select event type...</option>
+                      <option>Wedding</option>
+                      <option>Birthday</option>
+                      <option>Corporate</option>
+                      <option>Graduation</option>
+                      <option>Concert</option>
+                      <option>Party</option>
+                      <option>Other</option>
+                    </select>
+                    <div class="bk-error" id="errType">Please select an event type.</div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="bk-field">
+                    <label>Selected Plan</label>
+                    <input type="text" id="bkPlan" readonly placeholder="Choose a plan above..." />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="bk-field">
+                    <label>Selected Date</label>
+                    <input type="text" id="bkDate" readonly placeholder="Pick from calendar" />
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="bk-field">
+                    <label>Special Requests</label>
+                    <textarea id="bkNotes" rows="3" placeholder="Any special requirements..."></textarea>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="bk-error" id="errPlan" style="margin-bottom:.25rem">Please select a plan first.</div>
+                  <div class="bk-error" id="errDate" style="margin-bottom:.25rem">Please select an available date.</div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-accent w-100 rounded-pill py-2 fw-bold" id="bkSubmitBtn">
+                    <i class="bi bi-calendar-check-fill me-2"></i>Confirm Booking
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 text-white">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h6 class="fw-bold mb-3"><i class="bi bi-camera-fill me-2"></i>Event Gallery</h6>
+          <p class="small text-secondary mb-0">A simple, private photo sharing platform for every kind of event.</p>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <h6 class="fw-bold mb-3">Quick Links</h6>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-1"><a href="../index.html">Home</a></li>
+            <li class="mb-1"><a href="access.html">Access Event</a></li>
+            <li class="mb-1"><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-6">
+          <h6 class="fw-bold mb-3">Legal</h6>
+          <ul class="list-unstyled small mb-0">
+            <li class="mb-1"><a href="../privacy.html">Privacy Policy</a></li>
+            <li><a href="../terms.html">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 col-6">
+          <h6 class="fw-bold mb-3">Contact</h6>
+          <ul class="list-unstyled small text-secondary mb-0">
+            <li class="mb-1"><i class="bi bi-envelope-fill me-2"></i>hello@eventgallery.com</li>
+            <li class="mb-1"><i class="bi bi-telephone-fill me-2"></i>+1 (555) 000-0000</li>
+            <li><i class="bi bi-geo-alt-fill me-2"></i>New York, USA</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="border-secondary mt-4" />
+      <p class="text-center text-secondary small mb-0">&copy; 2025 Event Gallery &mdash; All rights reserved</p>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="booking-toast" id="bookingToast">
+    <div class="bt-icon"><i class="bi bi-check-circle-fill"></i></div>
+    <div>
+      <div class="bt-title">Booking Confirmed!</div>
+      <div class="bt-msg" id="toastMsg">We'll contact you shortly.</div>
+    </div>
+    <button class="bt-close" onclick="document.getElementById('bookingToast').classList.remove('show')">&times;</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <button id="darkToggle" onclick="toggleDark()" title="Toggle dark mode"><i class="bi bi-moon-fill"></i></button>
+
+  <script>
+    // ── Navbar ──
+    function openNav()  { document.getElementById('nav').classList.add('show');    document.getElementById('navOverlay').classList.add('show');    document.body.style.overflow='hidden'; }
+    function closeNav() { document.getElementById('nav').classList.remove('show'); document.getElementById('navOverlay').classList.remove('show'); document.body.style.overflow=''; }
+    document.getElementById('navToggler').addEventListener('click', openNav);
+
+    // ── Dark mode ──
+    function toggleDark() {
+      document.body.classList.toggle('dark');
+      const on = document.body.classList.contains('dark');
+      localStorage.setItem('dark', on);
+      document.getElementById('darkToggle').innerHTML = on ? '<i class="bi bi-sun-fill"></i>' : '<i class="bi bi-moon-fill"></i>';
+    }
+    if (localStorage.getItem('dark') === 'true') {
+      document.body.classList.add('dark');
+      document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('darkToggle').innerHTML = '<i class="bi bi-sun-fill"></i>';
+      });
+    }
+
+    // ── Page transition ──
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('mailto') || href.startsWith('tel') || a.target) return;
+        a.addEventListener('click', e => {
+          e.preventDefault();
+          document.body.classList.add('page-leave');
+          setTimeout(() => window.location = href, 280);
+        });
+      });
+    });
+
+    // ── Plan selection ──
+    let selectedPlan = '', selectedPrice = '', selectedDate = '';
+
+    function selectPlan(name, price) {
+      selectedPlan  = name;
+      selectedPrice = price;
+      document.getElementById('bpsName').textContent  = name;
+      document.getElementById('bpsPrice').textContent = price;
+      document.getElementById('bkPlan').value         = name + ' — ' + price;
+      document.getElementById('errPlan').style.display = 'none';
+      document.getElementById('bookingSection').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // ── Calendar ──
+    const BOOKED_DAYS = [3, 7, 14, 20, 25];
+    const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    let calYear, calMonth;
+
+    function initCal() {
+      const now = new Date();
+      calYear  = now.getFullYear();
+      calMonth = now.getMonth();
+      renderCal();
+    }
+
+    function renderCal() {
+      const grid  = document.getElementById('calGrid');
+      const label = document.getElementById('calMonth');
+      const today = new Date(); today.setHours(0,0,0,0);
+
+      label.textContent = MONTHS[calMonth] + ' ' + calYear;
+      grid.innerHTML = '';
+
+      const firstDay    = new Date(calYear, calMonth, 1).getDay();
+      const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
+
+      for (let i = 0; i < firstDay; i++) {
+        const blank = document.createElement('div');
+        blank.className = 'cal-day cal-blank';
+        grid.appendChild(blank);
+      }
+
+      for (let d = 1; d <= daysInMonth; d++) {
+        const btn  = document.createElement('button');
+        const date = new Date(calYear, calMonth, d); date.setHours(0,0,0,0);
+        const dateStr = calYear + '-' + String(calMonth+1).padStart(2,'0') + '-' + String(d).padStart(2,'0');
+        btn.textContent = d;
+        btn.type = 'button';
+
+        if (date < today) {
+          btn.className = 'cal-day day-past';
+        } else if (BOOKED_DAYS.includes(d)) {
+          btn.className = 'cal-day day-booked';
+        } else {
+          btn.className = 'cal-day day-available' + (selectedDate === dateStr ? ' day-selected' : '');
+          btn.addEventListener('click', () => {
+            selectedDate = dateStr;
+            document.getElementById('bkDate').value = dateStr;
+            document.getElementById('errDate').style.display = 'none';
+            renderCal();
+          });
+        }
+        grid.appendChild(btn);
+      }
+    }
+
+    document.getElementById('calPrev').addEventListener('click', () => {
+      calMonth--; if (calMonth < 0) { calMonth = 11; calYear--; } renderCal();
+    });
+    document.getElementById('calNext').addEventListener('click', () => {
+      calMonth++; if (calMonth > 11) { calMonth = 0; calYear++; } renderCal();
+    });
+
+    // ── Form submit ──
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let valid = true;
+
+      [
+        { id:'bkName',  err:'errName',  fn: v => v.trim().length > 0 },
+        { id:'bkEmail', err:'errEmail', fn: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+        { id:'bkPhone', err:'errPhone', fn: v => v.trim().length >= 7 },
+        { id:'bkType',  err:'errType',  fn: v => v !== '' },
+      ].forEach(c => {
+        const ok = c.fn(document.getElementById(c.id).value);
+        document.getElementById(c.err).style.display = ok ? 'none' : 'block';
+        if (!ok) valid = false;
+      });
+
+      if (!selectedPlan)  { document.getElementById('errPlan').style.display = 'block'; valid = false; }
+      if (!selectedDate)  { document.getElementById('errDate').style.display = 'block'; valid = false; }
+      if (!valid) return;
+
+      const btn = document.getElementById('bkSubmitBtn');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Processing...';
+
+      setTimeout(() => {
+        document.getElementById('toastMsg').textContent = selectedPlan + ' plan booked for ' + selectedDate + '. We\'ll be in touch soon!';
+        document.getElementById('bookingToast').classList.add('show');
+        btn.innerHTML = '<i class="bi bi-check-circle-fill me-2"></i>Booking Confirmed!';
+        btn.classList.replace('btn-accent','btn-success');
+
+        setTimeout(() => {
+          document.getElementById('bookingToast').classList.remove('show');
+          btn.disabled = false;
+          btn.innerHTML = '<i class="bi bi-calendar-check-fill me-2"></i>Confirm Booking';
+          btn.classList.replace('btn-success','btn-accent');
+          this.reset();
+          selectedPlan = ''; selectedPrice = ''; selectedDate = '';
+          document.getElementById('bpsName').textContent  = 'No plan selected';
+          document.getElementById('bpsPrice').textContent = '—';
+          renderCal();
+        }, 4000);
+      }, 1000);
+    });
+
+    initCal();
+  </script>
+</body>
+</html>

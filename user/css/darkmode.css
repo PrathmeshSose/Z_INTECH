@@ -1,6 +1,15 @@
 /* ── Shared color tokens (all pages) ────────── */
-.navbar.bg-primary,
-#mainNav { background-color: #0f3460 !important; }
+body:not(.dark) .navbar.bg-primary,
+body:not(.dark) #mainNav { background-color: #0f3460 !important; }
+
+/* ── Sticky navbar — all pages */
+.navbar { position: sticky !important; top: 0 !important; z-index: 1030 !important; }
+
+/* ── Pricing teaser dark */
+body.dark .pricing-teaser-section { background: #181818 !important; }
+body.dark .pt-card { background: #1e1e1e !important; border-color: transparent !important; }
+body.dark .pt-card--hot { border-color: #e94560 !important; background: #1e1e1e !important; }
+body.dark .pt-price { color: #e0e0e0 !important; }
 .btn-primary { background-color: #0f3460 !important; border-color: #0f3460 !important; }
 .btn-primary:hover { background-color: #16213e !important; border-color: #16213e !important; }
 body:not(.dark) .btn-outline-primary { color: #0f3460 !important; border-color: #0f3460 !important; }
@@ -81,10 +90,10 @@ body:not(.dark) .text-primary { color: #0f3460 !important; }
     background: #0f3460;
     z-index: 1055;
     padding: 1.5rem 1.25rem;
-    transition: right .3s cubic-bezier(.4,0,.2,1);
+    transition: right .3s cubic-bezier(.4,0,.2,1), background .2s;
     box-shadow: -4px 0 24px rgba(0,0,0,.35);
     overflow-y: auto;
-    display: block !important; /* override Bootstrap d-none */
+    display: block !important;
   }
   .navbar-collapse.show { right: 0; }
 
@@ -175,7 +184,11 @@ body.dark .features-section,
 body.dark .testimonials-section { background: #181818 !important; }
 
 /* Navbar & footer */
-body.dark .navbar { background-color: #0d0d0d !important; }
+body.dark .navbar,
+body.dark .navbar.bg-primary,
+body.dark #mainNav,
+body.dark #mainNav.scrolled { background-color: #0d0d0d !important; box-shadow: none !important; }
+body.dark .navbar-collapse { background: #0d0d0d !important; }
 body.dark footer { background: #0a0a0a !important; }
 body.dark footer p, body.dark footer small { color: #888 !important; }
 body.dark footer a { color: #888 !important; }
@@ -233,12 +246,70 @@ body.dark .size-slider-bar { color: #aaa; }
 body.dark .input-group-text { background: #1e1e1e !important; border-color: #444 !important; color: #888 !important; }
 body.dark .alert-warning { background: #2a2000 !important; color: #ffc107 !important; border-color: #664d00 !important; }
 
+/* Booking */
+body.dark .booking-section { background: #121212 !important; }
+body.dark .booking-plan-summary { background: #1e1e1e !important; border-color: #e94560 !important; }
+body.dark .bps-name  { color: #e0e0e0 !important; }
+body.dark .bps-price { color: #888 !important; }
+body.dark .bps-change { border-color: #444 !important; color: #aaa !important; }
+body.dark .bps-change:hover { border-color: #e94560 !important; color: #e94560 !important; }
+body.dark .booking-calendar { background: #1e1e1e !important; box-shadow: 0 2px 16px rgba(0,0,0,.4) !important; }
+body.dark .cal-month { color: #e0e0e0 !important; }
+body.dark .cal-nav { border-color: #444 !important; color: #e0e0e0 !important; }
+body.dark .cal-nav:hover { background: #e94560 !important; border-color: #e94560 !important; color: #fff !important; }
+body.dark .day-available { background: #1a2e1a !important; color: #81c784 !important; }
+body.dark .day-available:hover { background: #198754 !important; color: #fff !important; }
+body.dark .day-booked  { background: #2e1a1a !important; color: #ef9a9a !important; }
+body.dark .day-past    { background: #1a1a1a !important; color: #444 !important; }
+body.dark .cal-legend span { color: #888 !important; }
+body.dark .cal-legend { border-color: #333 !important; }
+body.dark .booking-form-card { background: #1e1e1e !important; box-shadow: 0 2px 16px rgba(0,0,0,.4) !important; }
+body.dark .bk-field label { color: #aaa !important; }
+body.dark .bk-field input,
+body.dark .bk-field select,
+body.dark .bk-field textarea { background: #2a2a2a !important; border-color: #444 !important; color: #e0e0e0 !important; }
+body.dark .bk-field input[readonly] { background: #1a1a1a !important; color: #666 !important; }
+body.dark .bk-field input:focus,
+body.dark .bk-field select:focus,
+body.dark .bk-field textarea:focus { border-color: #e94560 !important; background: #2a2a2a !important; }
+body.dark .booking-toast { background: #1e1e1e !important; box-shadow: 0 8px 32px rgba(0,0,0,.5) !important; }
+body.dark .bt-title { color: #e0e0e0 !important; }
+body.dark .bt-msg   { color: #888 !important; }
+
+/* Pricing */
+body.dark .pricing-section { background: #181818 !important; }
+body.dark .pricing-card { background: #1e1e1e !important; border-color: transparent !important; }
+body.dark .pricing-card--popular { border-color: #e94560 !important; background: #1e1e1e !important; }
+body.dark .pricing-plan { color: #e0e0e0 !important; }
+body.dark .pricing-price { color: #e0e0e0 !important; }
+body.dark .pricing-features li { color: #ccc !important; border-color: rgba(255,255,255,.07) !important; }
+body.dark .pricing-features li.disabled { color: #555 !important; }
+
 /* Marquee bar */
 body.dark .marquee-bar { background: #1a1a2e !important; border-color: #333 !important; }
 body.dark .marquee-track span { color: #ccc !important; }
 
 /* About page */
 body.dark .team-front h6 { color: #e0e0e0 !important; }
+body.dark .value-card { background: #1e1e1e !important; box-shadow: 0 2px 16px rgba(0,0,0,.4) !important; }
+body.dark .tl-title { color: #e0e0e0 !important; }
+body.dark .tl-desc { color: #888 !important; }
+body.dark .tl-year { color: #e94560 !important; }
+body.dark .partner-strip { background: #1a1a2e !important; border-color: #333 !important; }
+body.dark .partner-track span { color: #888 !important; }
+body.dark .timeline::before { background: linear-gradient(to bottom, #e94560, #333); }
+
+/* Contact page */
+body.dark .map-frame { box-shadow: 0 4px 24px rgba(0,0,0,.5); }
+body.dark #faqSearch { background: #1e1e1e !important; color: #e0e0e0 !important; border-color: #444 !important; }
+body.dark .response-badge { background: linear-gradient(135deg,#1a1a2e,#0f3460); }
+
+/* Inline-style bg overrides for all pages */
+body.dark [style*="background:#f4f6fb"],
+body.dark [style*="background: #f4f6fb"] { background: #181818 !important; }
+body.dark [style*="background:#fff"],
+body.dark [style*="background: #fff"] { background: #1e1e1e !important; }
+body.dark .about-bg-light { background: #181818 !important; }
 
 /* View page */
 body.dark .photo-frame { box-shadow: 0 8px 32px rgba(0,0,0,.6); }

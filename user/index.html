@@ -29,6 +29,7 @@
           <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="pages/about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="pages/events.html">Events</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/booking.html">Booking</a></li>
           <li class="nav-item"><a class="nav-link" href="pages/contact.html">Contact</a></li>
           <li class="nav-item ms-lg-2">
             <a href="pages/access.html" class="btn btn-accent btn-sm rounded-pill px-4">
@@ -264,6 +265,57 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
+       PRICING & BOOKING TEASER
+  ═══════════════════════════════════════════ -->
+  <section class="py-5 pricing-teaser-section">
+    <div class="container">
+      <div class="section-label text-center reveal">Pricing &amp; Booking</div>
+      <h2 class="section-title text-center reveal">Plans for every event</h2>
+      <p class="text-center text-muted mt-2 mb-5 reveal">From small gatherings to large-scale events — pick a plan and book your date.</p>
+      <div class="row g-4 justify-content-center">
+        <div class="col-sm-6 col-md-3 reveal">
+          <div class="pt-card">
+            <div class="pricing-icon bg-blue mx-auto mb-3"><i class="bi bi-camera"></i></div>
+            <h6 class="fw-bold">Starter</h6>
+            <div class="pt-price">$9<span>/event</span></div>
+            <p class="text-muted small">Up to 100 photos · 30 days</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 reveal">
+          <div class="pt-card pt-card--hot">
+            <div class="pt-badge">Popular</div>
+            <div class="pricing-icon bg-pink mx-auto mb-3"><i class="bi bi-stars"></i></div>
+            <h6 class="fw-bold">Pro</h6>
+            <div class="pt-price">$29<span>/event</span></div>
+            <p class="text-muted small">Up to 500 photos · 90 days</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 reveal">
+          <div class="pt-card">
+            <div class="pricing-icon bg-purple mx-auto mb-3"><i class="bi bi-building"></i></div>
+            <h6 class="fw-bold">Enterprise</h6>
+            <div class="pt-price">$79<span>/event</span></div>
+            <p class="text-muted small">Unlimited photos · 1 year</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 reveal">
+          <div class="pt-card">
+            <div class="pricing-icon bg-teal mx-auto mb-3"><i class="bi bi-sliders"></i></div>
+            <h6 class="fw-bold">Custom</h6>
+            <div class="pt-price">Let's Talk</div>
+            <p class="text-muted small">Fully tailored to your needs</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4 reveal">
+        <a href="pages/booking.html" class="btn btn-accent btn-lg rounded-pill px-5">
+          <i class="bi bi-calendar-check me-2"></i>View Plans &amp; Book a Date
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
        CTA BANNER
   ═══════════════════════════════════════════ -->
   <section class="cta-banner text-white text-center reveal">
@@ -462,149 +514,6 @@
       goTo(0);
     })();
 
-    // ── ANTIGRAVITY BANNER ──────────────────────
-    (function() {
-      const canvas = document.getElementById('antigravCanvas');
-      const ctx    = canvas.getContext('2d');
-      const sec    = document.getElementById('antigravBanner');
-      let W, H, mouse = { x: -999, y: -999 };
-
-      const ITEMS = [
-        { icon: '💍', label: 'Wedding',     color: '#f06292' },
-        { icon: '🎂', label: 'Birthday',    color: '#ffc107' },
-        { icon: '💼', label: 'Corporate',   color: '#0dcaf0' },
-        { icon: '🎓', label: 'Graduation',  color: '#20c997' },
-        { icon: '🎤', label: 'Concert',     color: '#a855f7' },
-        { icon: '🏆', label: 'Sports',      color: '#e94560' },
-        { icon: '📸', label: 'Photo Shoot', color: '#fd7e14' },
-        { icon: '🥳', label: 'Party',       color: '#6f42c1' },
-        { icon: '❤️',  label: 'Love Story',  color: '#dc3545' },
-        { icon: '🌟', label: 'Memories',   color: '#ffd700' },
-        { icon: '📷', label: 'Captured',   color: '#17a2b8' },
-        { icon: '🎉', label: 'Celebrate',  color: '#28a745' },
-      ];
-
-      let balls = [];
-
-      function resize() {
-        W = canvas.width  = sec.offsetWidth;
-        H = canvas.height = sec.offsetHeight;
-      }
-
-      function init() {
-        balls = ITEMS.map((item) => ({
-          ...item,
-          x:  80 + Math.random() * (W - 160),
-          y:  H * 0.3 + Math.random() * H * 0.5,
-          vx: (Math.random() - 0.5) * 1.2,
-          vy: -0.4 - Math.random() * 0.8,
-          r:  38 + Math.random() * 14,
-          wobble: Math.random() * Math.PI * 2,
-          wobbleSpeed: 0.018 + Math.random() * 0.012,
-        }));
-      }
-
-      function draw() {
-        ctx.clearRect(0, 0, W, H);
-
-        balls.forEach(b => {
-          b.wobble += b.wobbleSpeed;
-          b.vy -= 0.012;
-
-          const dx = b.x - mouse.x;
-          const dy = b.y - mouse.y;
-          const dist = Math.sqrt(dx*dx + dy*dy);
-          const repelRadius = 130;
-          if (dist < repelRadius && dist > 0) {
-            const force = (repelRadius - dist) / repelRadius;
-            b.vx += (dx / dist) * force * 2.8;
-            b.vy += (dy / dist) * force * 2.8;
-          }
-
-          b.vx *= 0.97;
-          b.vy *= 0.97;
-
-          const spd = Math.sqrt(b.vx*b.vx + b.vy*b.vy);
-          if (spd > 5) { b.vx = b.vx/spd*5; b.vy = b.vy/spd*5; }
-
-          b.x += b.vx;
-          b.y += b.vy;
-
-          if (b.x < -b.r)       b.x = W + b.r;
-          if (b.x > W + b.r)    b.x = -b.r;
-          if (b.y < -b.r * 2)   b.y = H + b.r;
-          if (b.y > H + b.r)    b.y = -b.r;
-
-          const wx = Math.sin(b.wobble) * 3;
-          const wy = Math.cos(b.wobble * 0.7) * 2;
-
-          const px = b.x + wx, py = b.y + wy;
-          const pw = b.r * 2.8, ph = b.r * 1.55;
-          const rx = 14;
-
-          ctx.save();
-          ctx.shadowColor = b.color;
-          ctx.shadowBlur  = 18;
-
-          ctx.beginPath();
-          ctx.roundRect(px - pw/2, py - ph/2, pw, ph, rx);
-          ctx.fillStyle = 'rgba(10,14,26,0.72)';
-          ctx.fill();
-
-          ctx.strokeStyle = b.color;
-          ctx.lineWidth = 2;
-          ctx.stroke();
-          ctx.restore();
-
-          ctx.font = `${b.r * 0.72}px serif`;
-          ctx.textAlign = 'center';
-          ctx.textBaseline = 'middle';
-          ctx.fillText(b.icon, px - pw * 0.18, py);
-
-          ctx.font = `600 ${b.r * 0.34}px system-ui, sans-serif`;
-          ctx.fillStyle = '#fff';
-          ctx.fillText(b.label, px + pw * 0.12, py);
-        });
-
-        for (let i = 0; i < balls.length; i++) {
-          for (let j = i+1; j < balls.length; j++) {
-            const a = balls[i], bb2 = balls[j];
-            const dx = a.x - bb2.x, dy = a.y - bb2.y;
-            const d  = Math.sqrt(dx*dx + dy*dy);
-            const minD = a.r + bb2.r + 10;
-            if (d < minD && d > 0) {
-              const push = (minD - d) / minD * 0.4;
-              a.vx  += (dx/d) * push;  a.vy  += (dy/d) * push;
-              bb2.vx -= (dx/d) * push; bb2.vy -= (dy/d) * push;
-            }
-          }
-        }
-
-        requestAnimationFrame(draw);
-      }
-
-      sec.addEventListener('mousemove', e => {
-        const r = sec.getBoundingClientRect();
-        mouse.x = e.clientX - r.left;
-        mouse.y = e.clientY - r.top;
-      });
-      sec.addEventListener('mouseleave', () => { mouse.x = -999; mouse.y = -999; });
-
-      sec.addEventListener('click', e => {
-        if (e.target.closest('.antigrav-content')) return;
-        const r = sec.getBoundingClientRect();
-        const cx = e.clientX - r.left, cy = e.clientY - r.top;
-        balls.forEach(b => {
-          const dx = b.x - cx, dy = b.y - cy;
-          const d  = Math.sqrt(dx*dx + dy*dy) || 1;
-          b.vx += (dx/d) * 6;
-          b.vy += (dy/d) * 6;
-        });
-      });
-
-      window.addEventListener('resize', () => { resize(); init(); });
-      resize(); init(); draw();
-    })();
   </script>
 </body>
 </html>
