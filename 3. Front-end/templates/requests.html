@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="dashboard-container">
+    
+    <!-- Form Section -->
+    <div class="card form-card">
+        <h2 class="section-title">New Request</h2>
+        <form id="requestForm">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" required minlength="3" maxlength="50" placeholder="Enter request title...">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" rows="3" required minlength="5" maxlength="200" placeholder="Enter description..."></textarea>
+            </div>
+            <button type="submit" id="submitBtn" class="btn-primary">Submit Request</button>
+        </form>
+    </div>
+
+    <!-- Table Section -->
+    <div class="card table-card">
+        <h2 class="section-title">Active Requests</h2>
+        <div class="table-responsive">
+            <table class="requests-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="requestsTableBody">
+                    {% for req in requests %}
+                    <tr id="row-{{ req.id }}">
+                        <td>{{ req.id }}</td>
+                        <td>{{ req.title }}</td>
+                        <td>{{ req.description }}</td>
+                        <td>
+                            <button class="btn-danger" onclick="deleteRequest({{ req.id }})">Delete</button>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr id="empty-row">
+                        <td colspan="4" class="text-center">No requests found.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

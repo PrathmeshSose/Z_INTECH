@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task & Request Management</title>
+    <!-- Tailwind CSS CDN for base modern defaults -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="antialiased text-gray-800 bg-[#f4f7f6]">
+    <nav class="bg-white shadow mb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-center h-16 items-center space-x-8">
+                <a href="/requests" class="text-gray-900 font-medium hover:text-blue-600 transition">Requests</a>
+                <a href="/tasks" class="text-gray-900 font-medium hover:text-blue-600 transition">Tasks</a>
+            </div>
+        </div>
+    </nav>
+    <div class="min-h-screen">
+        {% block content %}
+        {% endblock %}
+    </div>
+    
+    <!-- Custom Application Logic -->
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
